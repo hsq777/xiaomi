@@ -1,0 +1,34 @@
+/*顶部广告*/
+/*.top-show{*/
+    /*width: 100%;*/
+    /*height: 120px;*/
+/*}*/
+/*.top-show img{*/
+    /*width: 1326px;*/
+    /*height: 120px;*/
+    /*margin: 0 auto;*/
+/*}*/
+/*top*/
+#top{width: 100%;height: 40px;background: #333;}
+.top{width: 1280px;height: 40px;margin: 0 auto;}
+/*left*/
+.top-left{width: 427px;height: 40px;margin-left:27px;float: left;}
+.top-left li{float: left; font-size: 12px;line-height: 40px;padding:0 9px 0 8px;
+    background: url("../images/top_03.jpg") no-repeat right;
+}
+.top-left li a{display: block;height: 40px;color: #b0b0b0;}
+.top-left li a:hover{
+    color: white;
+}
+.top-left .top-left-first{padding-left: 0;}
+.top-left .top-left-last{background: none;}
+/*right*/
+.top-right{float: right;width: 305px;height: 40px;}
+.top-right li{float: left;padding:0 9px 0 8px;font-size: 12px;line-height: 40px;
+    background: url("../images/top_03.jpg") no-repeat right;}
+.top-right li a{display: block;height: 40px;color: #b0b0b0;}
+.top-right li a:hover{
+    color: white;
+}
+.top-right a img{display: inline-block;width: 120px;height: 40px;margin-left: 33px;}
+.top-right .top-right-last{background: 0;}
