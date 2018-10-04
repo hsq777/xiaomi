@@ -1,0 +1,161 @@
+/*top*/
+#top{
+    width: 100%;
+    height: 98px;
+    background: white;
+}
+.top{
+    width: 1131px;
+    height: 98px;
+    margin: 0 auto;
+    background: url("../images/mistore_logo.png")no-repeat left;
+
+}
+/*banner*/
+.banner{
+    width: 100%;
+    height: 588px;
+    position: relative;
+    overflow: hidden;
+}
+.banner img{
+    width: 2560px;
+    height: 588px;
+    position: absolute;
+    left: 50%;
+    margin-left: -1280px;
+}
+.login{
+    width: 410px;
+    height: 524px;
+    background: white url("../images/login-bg_03.jpg") no-repeat 204px 30px;
+    position: absolute;
+    right: 87px;
+    top: 32px;
+}
+.login-user .tip{
+    width: 348px;
+    height: 22px;
+    margin: 14px 0 0 30px;
+    display: none;
+    color: #ef5b00;
+    font-size: 12px;
+}
+.login-ewm{
+    width: 185px;
+    height: 185px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -92px;
+    margin-top: -92px;
+    background: url("../images/ewm.png")no-repeat;
+    display: none;
+}
+.login-none{
+    width: 204px;
+    height: 79px;
+    float: left;
+    text-align: center;
+    line-height: 79px;
+    font-size: 24px;
+    color: #666;
+}
+.login-none:hover{
+    color: #ef5b00;
+}
+.login-click{
+    color: #f56600;
+    width: 204px;
+    height: 79px;
+    float: left;
+    text-align: center;
+    line-height: 79px;
+    font-size: 24px;
+}
+.login input{
+    width: 331px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    margin: 14px 0 0 30px;
+    padding-left: 15px;
+    font-size: 14px;
+}
+.login .btn{
+    color: white;
+    font-size: 14px;
+    display: block;
+    width: 348px;
+    height: 52px;
+    background: #ef5b00;
+    text-align: center;
+    line-height: 52px;
+    margin: 24px 0 0 31px;
+}
+.login .phone{
+    font-size: 14px;
+    color: #ef5b00;
+    margin: 14px 0 0 31px;
+}
+.login .register{
+    font-size: 14px;
+    color: #999;
+    margin: 14px 0 0 94px;
+    display: inline-block;
+    width: 64px;
+    background: url("../images/forgrt_03.jpg")no-repeat right;
+}
+.login .forget{
+    font-size: 14px;
+    color: #999;
+    margin-left: 4px;
+}
+.login .login-other{
+    width: 348px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 31px;
+}
+.login-other .other-log{
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+.login-other .other-link a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.login-other a{
+    margin: 16px 0 0 35px;
+}
+.login-other .qq{
+    background: #0288d1;
+    margin-left: 57px;
+}
+.login-other .weibo{
+    background: #d32f2f;
+}
+.login-other .zfb{
+    background: #00aaee;
+}
+.login-other .wx{
+    background: #00d20d;
+}
+.login-other .other-link i{
+    font-size: 20px;
+    line-height: 30px;
+    color: white;
+    margin-left: 5px;
+}
+/*bottom*/
+#bottom{
+    width: 100%;
+
+}
+.bottom{
+    width: 1131px;
+    height: 148px;
+}

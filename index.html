@@ -5,6 +5,7 @@
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_860568_9kqya3ag3wk.css">
 </head>
 <body>
 <!--顶部广告-->
@@ -25,14 +26,14 @@
             <li class="top-left-last"><a href="#">小米</a></li>
         </ul>
         <ul class="top-right">
-            <li><a href="#">登入</a></li>
-            <li><a href="#">注册</a></li>
+            <li class="login"><a href="#">登入</a></li>
+            <li class="register"><a href="#">注册</a></li>
             <li class="top-right-last"><a href="#">消息通知</a></li>
-            <li>
+            <li class="shop-car">
                 <a href="#">
-                    <i></i>
+                    <i class="iconfont icon-gouwuchekong"></i>
                     购物车
-                    <span></span>
+                    <span>(0)</span>
                 </a>
             </li>
             <!--<li>-->
@@ -45,5 +46,10 @@
         </ul>
     </div>
 </div>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        login.init();
+    </script>
 </body>
 </html>

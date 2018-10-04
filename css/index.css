@@ -30,5 +30,15 @@
 .top-right li a:hover{
     color: white;
 }
-.top-right a img{display: inline-block;width: 120px;height: 40px;margin-left: 33px;}
 .top-right .top-right-last{background: 0;}
+.top-right .shop-car{
+    background: #424242;
+    width: 120px;
+    text-align: center;
+}
+.top-right .shop-car:hover{
+    background: white;
+}
+.top-right .shop-car a:hover{
+    color: #ff6700;
+}
