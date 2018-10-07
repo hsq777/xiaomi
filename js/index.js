@@ -19,6 +19,8 @@ var login=(function () {
             });
             $(".btn-text").on('blur',function(){
                 $(".search-list").css("display","none");
+                $(".btn-text").css("border-color","#e0e0e0");
+                $(".btn-sub").css("border-color","#e0e0e0");
             });
         }
     }

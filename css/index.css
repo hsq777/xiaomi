@@ -81,6 +81,13 @@
     z-index: 3;
     background: white;
 }
+.search-list ul{
+    height: 28px;
+}
+.search-list ul:hover{
+    cursor: pointer;
+    background: #f4f3f3;
+}
 .search-list  li{
     float: left;
     font-size: 12px;
