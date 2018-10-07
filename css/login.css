@@ -8,8 +8,11 @@
     width: 1131px;
     height: 98px;
     margin: 0 auto;
-    background: url("../images/mistore_logo.png")no-repeat left;
-
+    /*background: url("../images/mistore_logo.png")no-repeat left;*/
+}
+.top img{
+    width: 200px;
+    height: 98px;
 }
 /*banner*/
 .banner{
@@ -33,7 +36,7 @@
     right: 87px;
     top: 32px;
 }
-.login-user .tip{
+.login-user .tip-error{
     width: 348px;
     height: 22px;
     margin: 14px 0 0 30px;
@@ -153,9 +156,31 @@
 /*bottom*/
 #bottom{
     width: 100%;
-
 }
 .bottom{
     width: 1131px;
     height: 148px;
+    margin: 0 auto;
+}
+.list{
+    width: 347px;
+    height: 19px;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+.list li{
+    float: left;
+    padding: 0 11px 0 14px;
+    font-size: 12px;
+
+}
+.list li a{
+    color: #757575;
+}
+.bq{
+    display: block;
+    width: 566px;
+    margin: 10px auto;
+    font-size: 12px;
+    color: #757575;
 }

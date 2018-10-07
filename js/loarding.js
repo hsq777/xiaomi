@@ -8,7 +8,7 @@ var login=(function(){
 			this.$loginUser=document.querySelector('.login-user');
 			this.$inpU=document.querySelector('.username');
 			this.$psw=document.querySelector('.password');
-			this.$tipError=document.querySelector('.tip');
+			this.$tipError=document.querySelector('.tip-error');
 			this.event();
 		},
 		event:function(){
