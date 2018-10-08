@@ -176,20 +176,25 @@
 <!-- star-product -->
     <div class="star">
         <div class="star-top">
-            <h2>明星产品</h2>
+            <h2>小米闪购</h2>
+            <!--按钮-->
             <form class="star-btn">
                 <input type="submit" value="" class="btn-l">
                 <input type="submit" value="" class="btn-r">
             </form>
         </div>
         <ul class="star-bottom">
-            <li>
-                <a href="#">
-                    <img src="images/star_03.jpg">
-                    <h2>小米MIX 2</h2>
-                    <p>全面屏2.0，5.99''大屏</p>
-                    <span>3299元起</span>
-                </a>
+            <li class="star-first">
+                <div class="time-title">20:00场</div>
+                <img src="images/flashpurchase.png">
+                <div class="sub-time">距离开始还有</div>
+                <ul class="count-time">
+                    <li class="box hours">00</li>
+                    <li class="dash">:</li>
+                    <li class="box minutes">49</li>
+                    <li class="dash">:</li>
+                    <li class="box seconds">24</li>
+                </ul>
             </li>
             <li>
                 <a href="#">
@@ -229,8 +234,14 @@
     <script src="js/index.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper.js"></script>
+    <script src="js/time.js"></script>
     <script>
         login.init();
+        var	hours = document.querySelector('.hours');
+        var	minutes = document.querySelector('.minutes');
+        var seconds = document.querySelector('.seconds');
+        // 日 时 分 秒的dom对象
+        countDownTime.init('2018/10/08 20:00:00',hours, minutes, seconds);
     </script>
 </body>
 </html>

@@ -178,8 +178,55 @@
     background: url("../images/sbtn_03.jpg") no-repeat center;float: right;}
 .star-bottom {width: 1226px;height: 380px;text-align: center;}
 .star-bottom li{width: 234px;height: 340px;background: #fafafa;float: left;margin-right:14px; }
+/*闪购计时*/
+.star-bottom li:first-child{
+    background: #f1eded;
+    border-top: 1px solid #e53935;
+}
+.star-bottom li:first-child img{
+    display: inline-block;
+    width: 34px;
+    height: 53px;
+    margin: 0 auto;
+}
+.time-title{
+    height: 46px;
+    margin-top: 56px;
+    color: #e53935;
+    font-size: 20px;
+}
+.sub-time{
+    height: 22px;
+    color: #706f6f;
+    font-size: 14px;
+    margin: 33px 0 33px;
+}
+.count-time li{
+    float: left;
+}
+.count-time li:first-child{
+    border-top: 0;
+    background: #605751;
+    margin-left: 33px;
+}
+.count-time .box{
+    width: 46px;
+    height: 46px;
+    margin-right: 0;
+    background: #605751;
+    color: #fff;
+    font-size: 18px;
+    line-height: 46px;
+}
+.count-time .dash{
+    width: 15px;
+    height: 46px;
+    margin-right: 0;
+    color: #605751;
+    line-height: 46px;
+}
 .star-bottom .last{margin-right:0 ;}
-.star-bottom img{padding: 55px 0 0 70px;}
+/*.star-bottom img{padding: 55px 0 0 70px;}*/
 .star-bottom h2{font-size: 12px;color: #212121;line-height: 12px;padding-top: 51px;}
 .star-bottom p{font-size: 12px;color: #c0b0b0;line-height: 12px;padding-top:12px; }
 .star-bottom span{font-size: 12px;color: #ff6709;line-height: 12px;padding-top:20px; }
