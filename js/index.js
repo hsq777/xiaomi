@@ -1,9 +1,9 @@
 var login=(function () {
     return{
         init:function () {
+            // this.$list=document.querySelector(".row-list");
             this.event();
-            // this.getDay();
-            // setInterval(getDay,1000);
+            // this.getData();
         },
         event:function () {
             var _this=this;
@@ -24,34 +24,46 @@ var login=(function () {
                 $(".btn-text").css("border-color","#e0e0e0");
                 $(".btn-sub").css("border-color","#e0e0e0");
             });
+            $(".btn-r").on('click',function () {
+                $(".wrapper-list").css("left","-758px");
+                $(".icon-xiangyou").css("color","#e8e3e0");
+                $(".icon-xiangzuo").css("color","#b0b0b0")
+            });
+            $(".btn-l").on('click',function () {
+                $(".wrapper-list").css("left","0");
+                $(".icon-xiangyou").css("color","#b0b0b0");
+                $(".icon-xiangzuo").css("color","#e8e3e0")
+            })
         },
-        // setDay:function (n) {
-        //     if (n<10){
-        //         return '0'+n;
-        //     }else {
-        //         return n;
-        //     }
+        //获取数据
+        // getData:function () {
+        //     var _this = this;
+        //     var params = {
+        //         url: 'json/shop.json',
+        //         success:function (data) {
+        //             console.log(data);
+        //             _this.insertData(data);
+        //         }
+        //     };
+        //     sendAjax(params);
         // },
-        // getDay:function () {
-        //     var _this=this;
-        //     var nowDate=new Date();
-        //     var futureDate=new Date('2018/10/08/17:00');
-        //     var ms=(futureDate.getTime()-nowDate.getTime())/1000;
-        //     var sec=Math.floor(ms%60);
-        //     var min=Math.floor(ms/60%60);
-        //     var hour=Math.floor(ms/60/60%60);
-        //     var timer=document.querySelector('.count-time');
-        //     var timerH=timer.firstElementChild;
-        //     var timerS=timer.
-        //     console.log(timerH.innerHTML);
-        //     // var timerH=$(".count-time li:first");
-        //     timerH.innerHTML=_this.setDay(hour);
-        //     // $(".count-time").innerHTML=_this.setDay(hour)+':'+_this.setDay(min)+':'+_this.setDay(sec);
+        // //将数据渲染到页面中
+        // insertData:function (data) {
+        //     data = data.data;
+        //     var arr = [];
+        //     for (var i=0;i<data.length;i++){
+        //         arr.push(`<li>
+        //                     <a href="javascript:;">
+        //                         <img src="${data[i].img}">
+        //                         <h2>${data[i].h2}</h2>
+        //                         <p>${data[i].p}</p>
+        //                         <span>${data[i].span}</span>
+        //                     </a>
+			// 		    </li>`)
+        //     }
+        //     this.$list.innerHTML = arr.join('');
         // }
-    // function getDay() {
-    //
-    //     $timer.innerHTML='距离国庆还有'+setDay(day)+'天'+setDay(hour)+':'+setDay(min)+':'+setDay(sec);
-    // }
+
 
     }
 }());

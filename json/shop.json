@@ -1,12 +1,77 @@
 {
     "msg":200,
     "data": [
-        {"id": 1, "name": "牙刷", "price": 16},
-        {"id": 2, "name": "薯片", "price": 6},
-        {"id": 3, "name": "可乐", "price": 3},
-        {"id": 4, "name": "雪碧", "price": 3},
-        {"id": 5, "name": "棒棒糖", "price": 1},
-        {"id": 6, "name": "牙膏", "price": 16},
-        {"id": 7, "name": "百威啤酒", "price": 8}
+        {
+            "id": 1,
+            "name": "牙刷",
+            "price": 16,
+            "img":"images/star_03.jpg"
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        },
+        {
+            "id": 2,
+            "name": "薯片",
+            "price": 6,
+            "img": "images/star_03.jpg",
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        },
+        {
+            "id": 1,
+            "name": "牙刷",
+            "price": 16,
+            "img":"images/star_03.jpg"
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        },
+        {
+            "id": 2,
+            "name": "薯片",
+            "price": 6,
+            "img": "images/star_03.jpg",
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        },
+        {
+            "id": 1,
+            "name": "牙刷",
+            "price": 16,
+            "img":"images/star_03.jpg"
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        },
+        {
+            "id": 2,
+            "name": "薯片",
+            "price": 6,
+            "img": "images/star_03.jpg",
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        },
+        {
+            "id": 1,
+            "name": "牙刷",
+            "price": 16,
+            "img":"images/star_03.jpg"
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        },
+        {
+            "id": 2,
+            "name": "薯片",
+            "price": 6,
+            "img": "images/star_03.jpg",
+            "h2": "小米MIX 2",
+            "p" :"全面屏2.0，5.99''大屏",
+            "span" :"3299元起"
+        }
     ]
 }

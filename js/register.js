@@ -30,18 +30,18 @@ var register=(function(){
 		                sendAjax('http://localhost:8081/project/loarding/php/register.php', params);
 		            };
 			this.$inpU. addEventListener('change', function(){
-		                var params = {
-		                    method: 'post',
-		                    data: {
-		                        username: _this.$inpU.value
-		                    },
-		                    success: function(data) {
-		                        data = JSON.parse(data);
-		                        _this.checkUsername(data);
-		                    }
-		                }
-		                sendAjax('http://localhost:8081/project/loarding/php/check_username.php', params);
-		            }, false);
+				var params = {
+					method: 'post',
+					data: {
+						username: _this.$inpU.value
+					},
+					success: function(data) {
+						data = JSON.parse(data);
+						_this.checkUsername(data);
+					}
+				};
+				sendAjax('http://localhost:8081/project/loarding/php/check_username.php', params);
+			}, false);
 		},
 		checkUsername: function(data) {
 		            if(data.code == 200) {
