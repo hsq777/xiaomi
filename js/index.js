@@ -1,3 +1,4 @@
+//将数据渲染到页面；鼠标滑过样式完善
 var login=(function () {
     return{
         init:function () {
