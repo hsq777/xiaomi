@@ -26,7 +26,7 @@ var login=(function () {
                 $(".btn-sub").css("border-color","#e0e0e0");
             });
             $(".btn-r").on('click',function () {
-                $(".wrapper-list").css("left","-758px");
+                $(".wrapper-list").css({"left":"-758px","transition":"0.5s"});
                 $(".icon-xiangyou").css("color","#e8e3e0");
                 $(".icon-xiangzuo").css("color","#b0b0b0")
             });

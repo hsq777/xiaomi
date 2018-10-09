@@ -7,10 +7,13 @@
     include "public/connect_db.php";
     // 获取传输的json字符串
     $json = json_decode(file_get_contents("php://input"));
-    $username = $json -> username;
-    $password = $json -> password;
-    $sql = "SELECT * from shop_user WHERE username='$username'";
-    $insert_sql = "INSERT into shop_user (username, password) VALUES ('$username', '$password')";//插入新的用户
+    $phone = $json -> phone;
+    // $username = $json -> username;
+    // $password = $json -> password;
+    // $sql = "SELECT * from shop_user WHERE username='$username'";
+    // $insert_sql = "INSERT into shop_user (username, password) VALUES ('$username', '$password')";//插入新的用户
+    $sql = "SELECT * from tel_phone WHERE phone='$phone'";
+    $insert_sql = "INSERT into tel_phone (phone) VALUES ('$phone')";//插入新的手机号
     $coon = new db();
     // 判断用户名称是否存在
     $rows = $coon -> Query($sql, 2);

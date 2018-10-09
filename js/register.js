@@ -1,69 +1,102 @@
 var register=(function(){
 	return {
 		init:function(){
-			this.$loginBtn=document.querySelector('#login-btn');
-			this.$inpU=document.querySelector('#inputEmail3');
-			this.$psw=document.querySelector('#inputPassword3');
+			this.$btn=document.querySelector('.register-btn');
+			this.$phone=document.querySelector('.inp');
+			this.$error=document.querySelector('.error');
+			this.$errBlank=this.$error.querySelector('.err-blank');
+			this.$errFalse=this.$error.querySelector('.err-false');
 			this.event();
 		},
 		event:function(){
 			var _this=this;
-			this.$inpU.onfocus=function () {
-			    _this.$inpU.placeholder='请输入用户名';
+            var reg = /^1[34578][0-9]{9}$/;
+            this.$phone.onblur=function () {
+                var flag = reg.test(_this.$phone.value);
+				if(_this.$phone.value==''){
+					_this.$error.style.display='block';
+					_this.$errBlank.style.display='block';
+                    _this.$phone.className='inp-error';
+                    _this.$phone.oninput=function () {
+                        _this.$phone.className='inp';
+                        _this.$error.style.display='none';
+                        _this.$errBlank.style.display='none';
+                    }
+				}
+				else if(flag==false){
+                    _this.$error.style.display='block';
+                    _this.$errFalse.style.display='block';
+					_this.$phone.className='inp-error';
+                    _this.$phone.oninput=function () {
+                        _this.$phone.className='inp';
+                        _this.$error.style.display='none';
+                        _this.$errFalse.style.display='none';
+                    }
+				}
+            };
+			this.$btn.onclick = function() {
+				var flag1= reg.test(_this.$phone.value);
+                if(flag1){
+                    // 发送ajax，验证用户手机号
+                    var params = {
+                        method: 'post',
+                        data: {
+                            phone: _this.$phone.value
+                        },
+                        success: function(data) {
+                            data = JSON.parse(data);
+                            _this.register(data);
+                        }
+                    };
+                    sendAjax('http://localhost:8081/project/xiaomi/php/register.php', params);
+				}else {
+                    _this.$error.style.display='block';
+                    _this.$errFalse.style.display='block';
+                    _this.$phone.className='inp-error';
+				}
 			};
-			this.$psw.onfocus=function () {
-			    _this.$psw.placeholder='请输入密码';
-			};
-			this.$loginBtn.onclick = function() {
-		                // 发送ajax，验证用户名和密码
-		                var params = {
-		                    method: 'post',
-		                    data: {
-		                        username: _this.$inpU.value,
-		                        password: _this.$psw.value
-		                    },
-		                    success: function(data) {
-		                        data = JSON.parse(data);
-		                        _this.register(data);
-		                    }
-		                }
-		                sendAjax('http://localhost:8081/project/loarding/php/register.php', params);
-		            };
-			this.$inpU. addEventListener('change', function(){
-				var params = {
-					method: 'post',
-					data: {
-						username: _this.$inpU.value
-					},
-					success: function(data) {
-						data = JSON.parse(data);
-						_this.checkUsername(data);
-					}
-				};
-				sendAjax('http://localhost:8081/project/loarding/php/check_username.php', params);
-			}, false);
+           //设置国家下拉框
+            $(document).ready(function(){
+                $(".icon-unie621").click(function(e){
+                    $(".country-hidden").toggle();
+                    e.stopPropagation();
+                })
+
+                $(document).click(function(){
+                    $(".country-hidden").hide();
+                })
+
+                $(".country-hidden li").click(function(){
+                    $(".country-list").text($(this).text());
+                    $(".country-hidden").hide();
+                })
+            });
+            //设置电话前缀下拉框
+            $(document).ready(function(){
+                $(".icon-xiangxia").click(function(e){
+                    $(".phone-hidden").toggle();
+                    e.stopPropagation();
+                });
+                $(document).click(function(){
+                    $(".phone-hidden").hide();
+                });
+                $(".phone-hidden li").click(function(){
+                    $(".phone-list").text($(this)>$(".recode-code").text());
+                    $(".phone-hidden").hide();
+                })
+            });
+
 		},
-		checkUsername: function(data) {
-		            if(data.code == 200) {
-		               this.$usernameInp.className = 'inp success';
-		               this.$loginBtn.disabled = '';
-		            } else {
-		                alert(data.msg);
-		                this.$usernameInp.className = 'inp error';
-		                this.$loginBtn.disabled = 'true';
-		            }
-        },
 		register: function(data) {
-		            if(data.code == 200) {
-		                alert('注册成功');
-		            //     location.href = 'manager.html';
-		            //     document.cookie = "token=" + data.data.token;
-           			// document.cookie = "user-id=" + data.data.id;
-		              } 
-		             else {
-		                alert(data.msg);
-		             }
-	             }
-		
+			if(data.code == 200) {
+				alert('注册成功');
+				location.href = 'success.html';
+			//document.cookie = "token=" + data.data.token;
+			// document.cookie = "user-id=" + data.data.id;
+			  }
+			 else {
+				alert(data.msg);
+			 }
+		 }
 	}
-}())
+}());

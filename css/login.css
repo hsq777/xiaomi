@@ -36,6 +36,7 @@
     right: 87px;
     top: 32px;
 }
+/*账号登入*/
 .login-user .tip-error{
     width: 348px;
     height: 22px;
@@ -44,15 +45,12 @@
     color: #ef5b00;
     font-size: 12px;
 }
-.login-ewm{
-    width: 185px;
-    height: 185px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -92px;
-    margin-top: -92px;
-    background: url("../images/ewm.png")no-repeat;
+.login-user .tip-error .err-user{
+    display: none;
+    width: 200px;
+    /*display: inline-block;*/
+}
+.login-user .tip-error .err-blank{
     display: none;
 }
 .login-none{
@@ -64,7 +62,7 @@
     font-size: 24px;
     color: #666;
 }
-.login-none:hover{
+.login .login-none:hover{
     color: #ef5b00;
 }
 .login-click{
@@ -152,6 +150,84 @@
     line-height: 30px;
     color: white;
     margin-left: 5px;
+}
+/*二维码登入*/
+.login-ewm{
+    width: 185px;
+    height: 185px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -92px;
+    margin-top: -92px;
+    background: url("../images/ewm.png")no-repeat;
+    display: none;
+}
+/*手机登入*/
+.login-phone{
+    width: 410px;
+    height: 270px;
+    margin: 79px auto 0;
+    display: none;
+}
+.login-phone p{
+    width: 348px;
+    height: 15px;
+}
+.login-phone .tel,.messenger{
+    width: 348px;
+    height: 48px;
+    border: 1px solid #e8e8e8;
+    margin: 0 auto;
+    position: relative;
+}
+.country_list{
+    width: 44px;
+    height: 48px;
+    border-right: 1px solid #e8e8e8;
+    color: #333;
+    font-size: 14px;
+    line-height: 48px;
+    text-align: center;
+    margin-left: 20px;
+}
+.login-phone .phone_num{
+    width: 268px;
+    height: 48px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 65px;
+    padding-left: 14px;
+}
+.login-phone .mes_num{
+    width: 221px;
+    height: 48px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    padding-left: 14px;
+    position: absolute;
+    top: 0;
+}
+.login-phone .get_num{
+    width: 111px;
+    height: 49px;
+    position: absolute;
+    left: 235px;
+    border-left: 1px solid #e8e8e8;
+}
+.login-phone .get_num a{
+    font-size: 14px;
+    padding-left: 15px;
+    line-height: 49px;
+}
+.login-phone .tel-phone{
+    font-size: 14px;
+    color: #ef5b00;
+    margin-left: 31px;
 }
 /*bottom*/
 #bottom{
