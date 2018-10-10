@@ -27,15 +27,22 @@ var login=(function () {
             });
             $(".btn-r").on('click',function () {
                 $(".wrapper-list").css({"left":"-758px","transition":"0.5s"});
-                $(".icon-xiangyou").css("color","#e8e3e0");
-                $(".icon-xiangzuo").css("color","#b0b0b0")
+                $(".wrapper-list .icon-xiangyou").css("color","#e8e3e0");
+                $(".wrapper-list .icon-xiangzuo").css("color","#b0b0b0")
             });
             $(".btn-l").on('click',function () {
                 $(".wrapper-list").css("left","0");
                 $(".icon-xiangyou").css("color","#b0b0b0");
                 $(".icon-xiangzuo").css("color","#e8e3e0")
+            });
+            $(".recd-btn-r").on('click',function () {
+                $(".recd-main-list").css({'left':'-1226px',"transition":"0.5s"});
+
+                // if(){
+                //
+                // }
             })
-        },
+        }
         //获取数据
         // getData:function () {
         //     var _this = this;

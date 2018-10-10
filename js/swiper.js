@@ -1,16 +1,27 @@
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.banner', {
     spaceBetween: 30,
     effect: 'fade',
     loop: true,
     autoplay:{
         delay: 3000,
+        disableOnInteraction:false
     },
     pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+        el: '.banner-cricle',
+        clickable: true
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '.banner-btn-r',
+        prevEl: '.banner-btn-l'
+    }
+});
+var mySwiper = new Swiper('.con-swiper',{
+    pagination: {
+        el: '.con-cricle',
+        clickable: true
+    },
+    navigation: {
+        nextEl: '.con-btn-r',
+        prevEl: '.con-btn-l'
     }
 });
