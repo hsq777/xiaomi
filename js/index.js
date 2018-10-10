@@ -41,7 +41,14 @@ var login=(function () {
                 // if(){
                 //
                 // }
-            })
+            });
+            $(".nav-item").mouseover(function(){
+                $(".nav-hidden").css({'height':"234px","transition":"0.5s"});
+            }).mouseout(function(){
+                $(".nav-hidden").css({'height':"0","transition":"0.5s"});
+            });
+
+
         }
         //获取数据
         // getData:function () {
