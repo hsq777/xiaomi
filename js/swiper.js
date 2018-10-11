@@ -25,3 +25,19 @@ var mySwiper = new Swiper('.con-swiper',{
         prevEl: '.con-btn-l'
     }
 });
+var buySwiper = new Swiper('.pro-view',{
+    effect: 'fade',
+    loop: true,
+    autoplay:{
+        delay: 3000,
+        disableOnInteraction:false
+    },
+    pagination: {
+        el: '.buy-cricle',
+        clickable: true
+    },
+    navigation: {
+        nextEl: '.buy-btn-r',
+        prevEl: '.buy-btn-l'
+    }
+});

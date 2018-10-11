@@ -2,9 +2,243 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>商品详情</title>
+    <title>小米MIX2立即购买</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_860568_kt70dl8xh8.css">
+    <link rel="stylesheet" href="css/detailCommon.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
 </head>
 <body>
+    <!--头部-->
+    <div class="header"></div>
+    <!--nav-->
+    <div class="nav"></div>
 
+    <!--proHeader-->
+    <div id="proHeader">
+        <div class="proHeader">
+            <h2 class="proName">
+                小米米家智能摄像机云台版
+            </h2>
+            <div class="con">
+                <div class="left">
+                    <span class="separator">|</span>
+                    <a href="javascript:;">小方摄像机</a>
+                    <span class="separator">|</span>
+                    <a href="javascript:;">大方智能摄像机 1080P</a>
+                    <span class="separator">|</span>
+                    <a href="javascript:;">小米米家智能摄像机加强版</a>
+                </div>
+                <div class="right">
+                    <a href="javascript:;">概述</a>
+                    <span class="separator">|</span>
+                    <a href="javascript:;">参数</a>
+                    <span class="separator">|</span>
+                    <a href="javascript:;">F码通道</a>
+                    <span class="separator">|</span>
+                    <a href="javascript:;">用户评价</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--购买部分-->
+    <div id="buy-box">
+        <div class="buy-box">
+            <!--未登入提醒-->
+            <div id="login-notic">
+                <div class="login-notic">
+                    为方便您购买，请提前登录
+                    <a href="login.html">立即登入</a>
+                    <a href="javascript:;" class="guanbi">
+                        <i class="iconfont icon-guanbi"></i>
+                    </a>
+                </div>
+            </div>
+            <!--购买部分-->
+            <div class="buy-main">
+            <!--轮播图-->
+                <div class="swiper-container pro-view">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide buy-swiper-slide">
+                            <div class="buy-img">
+                                <a href="javascript:;">
+                                    <img src="images/sp1.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide con-swiper-slide">
+                            <div class="buy-img">
+                                <a href="javascript:;">
+                                    <img src="images/sp2.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-black buy-cricle"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next swiper-button-pink buy-btn-r"></div>
+                    <div class="swiper-button-prev swiper-button-pink buy-btn-l"></div>
+                </div>
+                <div class="pro-info">
+                    <h2 class="pro-title">小米米家智能摄像机云台版</h2>
+                    <p class="sale-desc">1080P高清画质 ／ 360度云台全景视角 ／ 红外夜视 ／ 双向语音 / AI 增强移动侦测 / H.265 编码 / 倒置安装</p>
+                    <span class="pro-price">199元</span>
+                    <div class="address-wrap">
+                        <div class="user-address">
+                            <i class="iconfont icon-dingwei"></i>
+                            <div class="address-info">
+                                <span class="item">北京</span>
+                                <span class="item">北京市</span>
+                                <span class="item">朝阳区</span>
+                                <span class="item">西乡街道</span>
+                            </div>
+                            <span class="change-address">修改</span>
+                            <div class="product-status">
+                                <span class="sale">有现货</span>
+                                <!--<span class="init">正在加载</span>-->
+                            </div>
+                        </div>
+                        <div class="color-choose">
+                            <h2 class="color-list">选择颜色</h2>
+                            <ul class="set-list">
+                                <li class="btn">
+                                    <a href="javascript:;">白色</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pro-list">
+                            <ul>
+                                <li>
+                                    小米米家智能摄像机云台版 白色
+                                    <span>199元</span>
+                                </li>
+                                <li class="totlePrice">总计：199元</li>
+                            </ul>
+                        </div>
+                        <ul class="btn-wrap">
+                            <li><a href="javascript:;">加入购物车</a></li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i></i>
+                                    喜欢
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="pro-policy">
+                            <a href="javascript:;">
+                                <span class="support">
+                                    <i></i>
+                                    <em>7天无理由退货</em>
+                                </span>
+                                <span class="support">
+                                    <i></i>
+                                    <em>15天无理由退换</em>
+                                </span>
+                                <span class="support">
+                                    <i></i>
+                                    <em>保修</em>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部服务-->
+    <div class="container"></div>
+
+    <!--底部-->
+    <div class="contain"></div>
+
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/detail.js"></script>
+    <script src="js/detail.js"></script>
+    <script>
+        $('.header').load('common.html #top',function () {
+            $(".login").on('click',function () {
+                location.href='login.html';
+            });
+            $(".register").on('click',function () {
+                location.href='register.html';
+            });
+        });
+        $('.nav').load('common.html #nav',function () {
+            $("#banner_menu_wrap").children().hover(function() {
+                $(this).css("background", "#ff6700");
+                $(this).children(".banner_menu_content").css("border", "1px solid #F0F0F0").show();
+            }, function() {
+                $(this).css("background", "none");
+                $(this).children(".banner_menu_content").css("border", "0px solid #F0F0F0").hide();
+            });
+            $(function() {
+                var i = 0;
+                var big_banner_pic = $("#big_banner_pic");
+                var allimg = $("#big_banner_pic li").length;
+                function img_change() {
+                    var img_i = i * -1226 + "px";
+                    big_banner_pic.animate({
+                        opacity: ".2"
+                    }, 100, function() {
+                        big_banner_pic.css("left", img_i);
+                        big_banner_pic.animate({
+                            opacity: "1"
+                        }, 100);
+                    })
+                }
+                function automatic() {
+                    i += 1;
+                    if (i >= allimg) {
+                        i = 0;
+                    }
+                    img_change();
+                }
+                change_self_time = setInterval(automatic, 3000);
+                $("#big_banner_change_wrap").hover(function() {
+                    clearInterval(change_self_time);
+                    $("#big_banner_change_wrap").children().show();
+                }, function() {
+                    change_self_time = setInterval(automatic, 3000);
+                    $("#big_banner_change_wrap").children().hide();
+                })
+                $("#big_banner_change_prev").click(function() {
+                    i += 1;
+                    if (i >= allimg) {
+                        i = 0;
+                    }
+                    img_change();
+                })
+                $("#big_banner_change_next").click(function() {
+                    i -= 1;
+                    if (i <= 0) {
+                        i = allimg - 1;
+                    }
+                    img_change();
+                })
+            });
+            $(".logo").on('click',function () {
+                location.href='index.html';
+            });
+
+            $(".btn-text").on('focus',function(){
+                $(".search-list").css({"display":"block","border-color":"#ff6700","border-top":"1px #ff6700 solid"});
+                $(".btn-text").css("border-color","#ff6700");
+                $(".btn-sub").css("border-color","#ff6700");
+
+            });
+            $(".btn-text").on('blur',function(){
+                $(".search-list").css("display","none");
+                $(".btn-text").css("border-color","#e0e0e0");
+                $(".btn-sub").css("border-color","#e0e0e0");
+            });
+        });
+
+        $('.container').load('common.html .site-footer');
+        $('.contain').load('common.html .site-info');
+    </script>
 </body>
 </html>

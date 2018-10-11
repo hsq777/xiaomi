@@ -1,5 +1,5 @@
-//将数据渲染到页面；鼠标滑过样式完善
-var login=(function () {
+//将数据渲染到页面；
+var index=(function () {
     return{
         init:function () {
             // this.$list=document.querySelector(".row-list");
@@ -35,6 +35,7 @@ var login=(function () {
                 $(".icon-xiangyou").css("color","#b0b0b0");
                 $(".icon-xiangzuo").css("color","#e8e3e0")
             });
+            //为你推荐按键（未完成）
             $(".recd-btn-r").on('click',function () {
                 $(".recd-main-list").css({'left':'-1226px',"transition":"0.5s"});
 
@@ -42,11 +43,46 @@ var login=(function () {
                 //
                 // }
             });
-            $(".nav-item").mouseover(function(){
-                $(".nav-hidden").css({'height':"234px","transition":"0.5s"});
-            }).mouseout(function(){
-                $(".nav-hidden").css({'height':"0","transition":"0.5s"});
-            });
+
+            //nav隐藏下拉框
+            // $(".nav-item").mouseover(function(){
+            //     $(".nav-hidden").css('height',"234px");
+            //     $(".xiaomi-phone").mousemove(function () {
+            //         $(".nav-first").css({"display":"block","transition":"0.5s"});
+            //     }).mouseout(function () {
+            //         $(".nav-first").css({"display":"none","transition":"0.5s"});
+            //         $(".nav-hidden").mousemove(function () {
+            //             $(this).css("height", "234px");
+            //             $('.nav-first').css("display",'block')
+            //         }).mouseout(function () {
+            //             $(this).css("height", "0");
+            //             $('.nav-first').css("display",'none')
+            //         })
+            //     });
+            //     $('.redmi').mousemove(function () {
+            //         $('.nav-second').css("display",'block');
+            //         $(".xiaomi-phone").mouseout(function () {
+            //             // $(".nav-first").css({"display":"none","transition":"0.5s"});
+            //         })
+            //     }).mouseout(function () {
+            //         $('.nav-second').css("display",'none');
+            //         $(".nav-hidden").mousemove(function () {
+            //             $(this).css("height", "234px");
+            //             $('.nav-second').css("display",'block')
+            //         }).mouseout(function () {
+            //             $(this).css("height", "0");
+            //             $('.nav-second').css("display",'none')
+            //         })
+            //     });
+            //     $(".computer").mousemove(function () {
+            //         $('.nav-third').css("display",'block')
+            //     }).mouseout(function () {
+            //         $('.nav-third').css("display", 'none')
+            //     });
+            //
+            // }).mouseout(function(){
+            //     $(".nav-hidden").css('height',"0");
+            // });
 
 
         }
