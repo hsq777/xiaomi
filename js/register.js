@@ -81,7 +81,7 @@ var register=(function(){
                     $(".phone-hidden").hide();
                 });
                 $(".phone-hidden li").click(function(){
-                    $(".phone-list").text($(this)>$(".recode-code").text());
+                    $(".phone-list").text($(this).children(".recode-code").text());
                     $(".phone-hidden").hide();
                 })
             });
@@ -91,8 +91,8 @@ var register=(function(){
 			if(data.code == 200) {
 				alert('注册成功');
 				location.href = 'success.html';
-			//document.cookie = "token=" + data.data.token;
-			// document.cookie = "user-id=" + data.data.id;
+                //document.cookie = "token=" + data.data.token;
+                // document.cookie = "user-id=" + data.data.id;
 			  }
 			 else {
 				alert(data.msg);

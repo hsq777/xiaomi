@@ -1,10 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>购物车</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/detailCommon.css">
+    <link rel="stylesheet" href="css/shopcar.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_860568_xozu3sp74y.css">
 </head>
-<body>
 
+<body>
+    <!--头部-->
+    <div id="shop_header">
+        <div class="shop_header">
+            <div class="header_logo">
+                <a href="javascript:;">
+                    <img src="images/mi_03.jpg" alt="">
+                </a>
+            </div>
+            <div class="header_title">
+                <h2>我的购物车</h2>
+                <p>温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</p>
+            </div>
+            <div class="topbar-info">
+                <a href="login.html">登入</a>
+                <span class="sep">|</span>
+                <a href="register.html">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <!--商品部分-->
+
+    <div id="carMain">
+        <div class="carMain">
+            <div class="carBox">
+                <!--头部信息-->
+                <div class="carMain_hd">
+                    <ul class="order_lists cartTop">
+                        <li class="list_chk">
+                            <span class="border_icon borser_origin btn_border btn_all">
+                                <i class="iconfont icon-dagou1"></i>
+                            </span>
+                            全选
+                        </li>
+                        <li class="list_img"></li>
+                        <li class="list_con">商品名称</li>
+                        <li class="list_price">单价</li>
+                        <li class="list_amount">数量</li>
+                        <li class="list_sum">小计</li>
+                        <li class="list_op">操作</li>
+                    </ul>
+                </div>
+                <!--商品区域-->
+                <div class="cartBox">
+                    <!-- <div class="order_content"> -->
+                        <!--<ul class="order_lists">
+                            <li class="list_chk">
+                                <i class="iconfont icon-dagou1"></i>
+                                <input type="checkbox" id="checkbox_4" class="son_check">
+                                        <label for="checkbox_4" class=""></label> -->
+                        <!--</li>
+                            <li class="list_img">
+                                <div class="list_img">
+                                    <a href="javascript:;">
+                                        <img src="./images/4.png" alt=""> -->
+                        <!-- 插入图片
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="list_con text_name">
+                                <div class="list_text">
+                                    <a href="javascript:;">插入数据</a> -->
+                        <!-- </div>
+                            </li>
+                            <li class="list_price">
+                                <p class="price">插入单价</p>
+                            </li> -->
+                        <!--数量-->
+                        <!-- <li class="list_amount">
+                                <div class="amount_box">
+                                    <a href="javascript:;" class="reduce reSty">-</a>
+                                    <input type="text" value="1" class="sum">
+                                    <a href="javascript:;" class="plus">+</a>
+                                </div>
+                            </li> -->
+                        <!--小计-->
+                        <!-- <li class="list_sum">
+                                <p class="sum_price">￥1980</p>
+                            </li> -->
+                        <!--操作-->
+                        <!-- <li class="list_op">
+                                <p class="del">
+                                    <a href="javascript:;" class="delBtn">移除商品</a>
+                                </p>
+                            </li>
+                        </ul> -->
+                    <!-- </div> -->
+                </div>
+                <!--总计金额-->
+                <div class="bar-wrapper">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--操作-->
+    <!-- <section class="my_model">
+            <p class="title">删除宝贝
+                <span class="closeModel">X</span>
+            </p>
+            <p>您确认要删除该宝贝吗？</p>
+            <div class="opBtn">
+                <a href="javascript:;" class="dialog-sure">确定</a>
+                <a href="javascript:;" class="dialog-close">关闭</a>
+            </div>
+        </section> -->
+    <!-- <div class="box">
+
+    </div> -->
+    <!--底部-->
+    <div class="container"></div>
+    <div class="contain"></div>
 </body>
+<script src="js/common/jquery.min.js"></script>
+<script src="js/ajax.2.0.0.js"></script>
+<script src="js/shopcar.js"></script>
+<script>
+    $('.container').load('common.html .site-footer');
+    $('.contain').load('common.html .site-info');
+    getShopList();
+
+</script>
+
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>小米MIX2立即购买</title>
     <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_860568_kt70dl8xh8.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_860568_l2arx10kwa.css">
     <link rel="stylesheet" href="css/detailCommon.css">
     <link rel="stylesheet" href="css/detail.css">
     <link rel="stylesheet" href="css/swiper.min.css">
@@ -44,17 +44,17 @@
     </div>
     <!--购买部分-->
     <div id="buy-box">
-        <div class="buy-box">
-            <!--未登入提醒-->
-            <div id="login-notic">
-                <div class="login-notic">
-                    为方便您购买，请提前登录
-                    <a href="login.html">立即登入</a>
-                    <a href="javascript:;" class="guanbi">
-                        <i class="iconfont icon-guanbi"></i>
-                    </a>
-                </div>
+        <!--未登入提醒-->
+        <div id="login-notic">
+            <div class="login-notic">
+                为方便您购买，请提前登录
+                <a href="login.html">立即登入</a>
+                <a href="javascript:;" class="guanbi">
+                    <i class="iconfont icon-guanbi"></i>
+                </a>
             </div>
+        </div>
+        <div class="buy-box">
             <!--购买部分-->
             <div class="buy-main">
             <!--轮播图-->
@@ -103,14 +103,14 @@
                         <div class="color-choose">
                             <h2 class="color-list">选择颜色</h2>
                             <ul class="set-list">
-                                <li class="btn">
+                                <li class="btn name-color">
                                     <a href="javascript:;">白色</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="pro-list">
                             <ul>
-                                <li>
+                                <li class="totolName">
                                     小米米家智能摄像机云台版 白色
                                     <span>199元</span>
                                 </li>
@@ -118,7 +118,7 @@
                             </ul>
                         </div>
                         <ul class="btn-wrap">
-                            <li><a href="javascript:;">加入购物车</a></li>
+                            <li class="btn-wrap-buy"><a href="javascript:;">加入购物车</a></li>
                             <li>
                                 <a href="javascript:;">
                                     <i></i>
@@ -129,15 +129,15 @@
                         <div class="pro-policy">
                             <a href="javascript:;">
                                 <span class="support">
-                                    <i></i>
+                                    <i class="iconfont icon-dagou"></i>
                                     <em>7天无理由退货</em>
                                 </span>
                                 <span class="support">
-                                    <i></i>
+                                    <i class="iconfont icon-dagou"></i>
                                     <em>15天无理由退换</em>
                                 </span>
                                 <span class="support">
-                                    <i></i>
+                                    <i class="iconfont icon-dagou"></i>
                                     <em>保修</em>
                                 </span>
                             </a>
@@ -166,6 +166,9 @@
             $(".register").on('click',function () {
                 location.href='register.html';
             });
+            $(".shop-car").on('click',function(){
+                location.href='shopcar.html';
+            })
         });
         $('.nav').load('common.html #nav',function () {
             $("#banner_menu_wrap").children().hover(function() {
@@ -239,6 +242,7 @@
 
         $('.container').load('common.html .site-footer');
         $('.contain').load('common.html .site-info');
+        
     </script>
 </body>
 </html>

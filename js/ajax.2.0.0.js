@@ -10,6 +10,7 @@ function sendAjax(options) {
     for(var i in options) {
         _default[i] = options[i];
     }
+
     var xhr = new XMLHttpRequest();
     xhr.open(_default.method, _default.url, true);
     xhr.send(_default.data);
@@ -24,6 +25,7 @@ function sendAjax(options) {
                         _default.success(val);
                     }
                 }
+
             } else {
                 if(typeof _default.error === 'function') {
                     _default.error(val);
