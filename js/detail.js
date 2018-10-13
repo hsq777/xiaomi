@@ -19,7 +19,7 @@ function  addCar(name,count) {
         if(shopList[j].name === name){
             //证明商品已经存在
             //累计即可
-            shopList[j].count = Number(shopList[j].count) + Number(count);
+            shopList[j].count = Number(shopList[j].count) + Number(count)-1;
             break;
         }
     }

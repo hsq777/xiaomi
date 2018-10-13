@@ -14,6 +14,9 @@ var index=(function () {
             $(".register").on('click',function () {
                 location.href='register.html';
             });
+            $(".shop-car").on('click',function(){
+                location.href = 'shopcar.html';
+            })
             $(".btn-text").on('focus',function(){
                 $(".search-list").css({"display":"block","border-color":"#ff6700","border-top":"1px #ff6700 solid"});
                 $(".btn-text").css("border-color","#ff6700");
