@@ -32,7 +32,6 @@
     </div>
 
     <!--商品部分-->
-
     <div id="carMain">
         <div class="carMain">
             <div class="carBox">
@@ -76,7 +75,7 @@
                     <!-- </div>
                             </li>
                             <li class="list_price">
-                                <p class="price">插入单价</p>
+                                <p class="price">插入单价</p>元
                             </li> -->
                     <!--数量-->
                     <!-- <li class="list_amount">
@@ -112,11 +111,17 @@
                         <em class="cartTotalPrice"></em>元
                     </span> -->
                 </div>
+                <!--猜你喜欢-->
+                <div class="guss_like">
+                    <h2 class="guss_title">
+                        <span>买购物车中商品的人还买了</span>
+                    </h2>
+                </div>
             </div>
         </div>
     </div>
     <!--操作-->
-    <div class="model_box">
+    <div class="model_bg">
         <section class="my_model">
             <p class="title">删除宝贝
                 <span class="closeModel">X</span>
@@ -130,15 +135,15 @@
     </div>
     
     <!--底部-->
-    <div class="container"></div>
-    <div class="contain"></div>
+    <div class="footer_service"></div>
+    <div class="footer"></div>
 </body>
 <script src="js/common/jquery.min.js"></script>
 <script src="js/ajax.2.0.0.js"></script>
 <script src="js/shopcar.js"></script>
 <script>
-    $('.container').load('common.html .site-footer');
-    $('.contain').load('common.html .site-info');
+    $('.footer_service').load('common.html .site-footer');
+    $('.footer').load('common.html .site-info');
     getShopList();
 
 </script>
