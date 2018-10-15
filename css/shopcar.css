@@ -72,6 +72,49 @@
   width: 1226px;
   margin: 0 auto;
 }
+.car_empty{
+  width: 668px;
+  height: 273px;
+  padding-left: 558px;
+  margin: 65px 0 130px 0;
+  background: url(../images/cart-empty.png)no-repeat 120px 0;
+  display: none;
+}
+.car_empty h2{
+  width: 668px;
+  height: 54px;
+  margin: 100px 0 15px;
+  font-size: 36px;
+  color: #b0b0b0; 
+  font-weight: 1000;
+}
+.car_empty .login_desc{
+  width: 668px;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #b0b0b0;
+}
+.car_empty .login_btn{
+  display: inline-block;
+  width: 170px;
+  height: 48px;
+  margin-right: 10px;
+  background: #ff6700;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  border: 1px solid #ff6700;
+}
+.car_empty .shopping_btn{
+  display: inline-block;
+  width: 170px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #ff6700;
+  border: 1px solid #ff6700;
+}
 #carMain .carMain .carBox .carMain_hd {
   width: 1226px;
   height: 70px;
@@ -323,8 +366,94 @@
   display: block;
   background-color: #f5f5f5;
 }
-
-
+.guss_shop{
+  width: 1226px;
+  height: 628px;
+  position: relative;
+}
+.guss_row{
+  width: 1240px;
+  height: 628px;
+  /* padding: 0 0 14px 14px; */
+  position: absolute;
+  left: -14px;
+}
+.guss_list{
+  float: left;
+  width: 234px;
+  height: 300px;
+  margin: 0 0 14px 14px;
+  background: #fff;
+}
+.guss_list dl{
+  width: 194px;
+  height: 280px;
+  padding: 0 20px;
+}
+.guss_list dl dt{
+  width: 194px;
+  height: 145px;
+  padding: 40px 0 15px 0;
+  margin: 0;
+}
+.guss_list .guss_img a{
+  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+  display: block;
+}
+.guss_list .guss_img a img{
+  width: 140px;
+  height: 140px;
+}
+.guss_list .guss_name{
+  width: 194px;
+  height: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.guss_list .guss_name a{
+  font-size: 14px;
+  color: #333;
+}
+.guss_list .guss_price{
+  width: 194px;
+  height: 21px;
+  margin-bottom: 10px;
+  color: #ff6700;
+  font-size: 14px;
+  text-align: center;
+}
+.guss_list .guss_tips{
+  width: 194px;
+  height: 21px;
+  text-align: center;
+  font-size: 12px;
+  color: #757575;
+  position: relative;
+}
+.guss_list:hover .guss_tips .btn_add{
+  display: block;
+}
+.guss_list .guss_tips .btn_add{
+  width: 120px;
+  position: absolute;
+  left: 37px;
+  top: 0;
+  border:1px solid #ff6700;
+  background: #fff;
+  color: #ff6700;
+  height: 28px;
+  font-size: 12px;
+  line-height: 28px;
+  display: none;
+}
+.guss_list .guss_tips .btn_add:hover{
+  background: #ff6700;
+  color: #fff;
 }
 /*删除操作*/
 body{
@@ -343,55 +472,49 @@ body{
 .my_model{
   position: fixed;
   display: none;
-  top:50%;
+  top:0;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -200px;
+  margin-left: -160px;
   z-index: 9999;
-  width: 360px;
-  height: 120px;
-  border: 1px solid #aeaeae;
-  border-radius: 3px;
-  padding: 20px;
+  width: 380px;
+  height: 170px;
+  padding: 60px 60px 40px;
   background: #fff;
 }
 .my_model .title{
-  font-size: 14px;
-  color: #3c3c3c;
-  font-weight: 700;
-  margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 50px;
+    color: #424242;
+    text-align: center;
+    width: 380px;
+    height: 130px;
 }
 .my_model .title .closeModel{
   float: right;
   cursor: pointer;
 }
-.my_model p{
-  line-height:16px;
-}
 .my_model .opBtn{
-  margin-top: 20px;
+  width: 380px;
+  height: 40px;
 }
 .my_model .opBtn a{
-  width: 58px;
-  height: 28px;
-  line-height: 28px;
+  width: 158px;
+  height: 38px;
+  line-height: 38px;
   text-align: center;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
   -ms-border-radius: 1px;
-  border-radius: 1px;
   display: inline-block;
-  margin-right: 10px;
-  font-weight: 700;
+  margin: 0 7px;
 }
 .my_model .dialog-sure{
-  background: #52a0e5;
+  background: #ff6700;
   color: #fff;
-  border: 1px solid #52a0e5;
+  /* border: 1px solid #52a0e5; */
 }
-
 .my_model .dialog-close{
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  color: #3c3c3c;
+  background: #b0b0b0;
+  color: #fff;
 }

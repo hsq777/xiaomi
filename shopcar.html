@@ -15,7 +15,7 @@
     <div id="shop_header">
         <div class="shop_header">
             <div class="header_logo">
-                <a href="javascript:;">
+                <a href="index.html">
                     <img src="images/mi_03.jpg" alt="">
                 </a>
             </div>
@@ -35,6 +35,13 @@
     <div id="carMain">
         <div class="carMain">
             <div class="carBox">
+                <!--空购物车时-->
+                <div class="car_empty">
+                    <h2>您的购物车还是空的!</h2>
+                    <p class="login_desc">登入后将显示您之前加入的商品</p>
+                    <a href="login.html" class="login_btn">立即登入</a>
+                    <a href="index.html" class="shopping_btn">马上去购物</a>
+                </div>
                 <!--头部信息-->
                 <div class="carMain_hd">
                     <ul class="order_lists cartTop">
@@ -99,6 +106,7 @@
                     <!-- </div> -->
                 </div>
                 <!--总计金额-->
+                <!-- <div id="bar-wrapper"> -->
                 <div class="bar-wrapper">
                     <!-- <div class="section_left">
                         <a href="javascript:;" class="backShop">继续购物</a>
@@ -111,11 +119,36 @@
                         <em class="cartTotalPrice"></em>元
                     </span> -->
                 </div>
+                <!-- </div> -->
                 <!--猜你喜欢-->
                 <div class="guss_like">
                     <h2 class="guss_title">
                         <span>买购物车中商品的人还买了</span>
                     </h2>
+                    <div class="guss_shop">
+                        <ul class="guss_row">
+                            <!-- <li class="guss_list">
+                                <dl>
+                                    <dt class="guss_img">
+                                        <a href="javascript:;">
+                                            <img src="images/guss.jpg" alt="小米路由器Pro">
+                                        </a>
+                                    </dt>
+                                    <dd class="guss_name">
+                                        <a href="javascript:;">小米路由器Pro</a>
+                                    </dd>
+                                    <dd class="guss_price">
+                                        449
+                                        <span>元</span>
+                                    </dd>
+                                    <dd class="guss_tips">
+                                        7185人好评
+                                        <a href="javascript:;" class="btn_add">加入购物车</a>
+                                    </dd>
+                                </dl>
+                            </li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,13 +156,13 @@
     <!--操作-->
     <div class="model_bg">
         <section class="my_model">
-            <p class="title">删除宝贝
+            <p class="title">确定删除吗?
                 <span class="closeModel">X</span>
             </p>
-            <p>您确认要删除该宝贝吗？</p>
             <div class="opBtn">
+                <a href="javascript:;" class="dialog-close">取消</a>
                 <a href="javascript:;" class="dialog-sure">确定</a>
-                <a href="javascript:;" class="dialog-close">关闭</a>
+                
             </div>
         </section>
     </div>
@@ -145,7 +178,7 @@
     $('.footer_service').load('common.html .site-footer');
     $('.footer').load('common.html .site-info');
     getShopList();
-
+    getLikeData();
 </script>
 
 </html>

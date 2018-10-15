@@ -13,6 +13,7 @@ function getShopList() {
 //获取购物车数据
 function getData() {
     carShopList = JSON.parse(localStorage.shopList || '[]');
+    // console.log(carShopList);
     insertData(carShopList);
 };
 //把购物车添加到页面中
@@ -22,11 +23,14 @@ function insertData(data) {
         //通过名字获取商品
         var shop;
         for (var j = 0; j < shopList.length; j++) {
+            // console.log(shopList[j]);
             if (shopList[j].name == data[i].name) {
                 shop = shopList[j];
+                console.log(shopList[j]);
                 break;
             }
         }
+        // console.log(shop);
         arr.push(
             `<div class="order_content">
                 <ul class="order_lists">
@@ -37,14 +41,14 @@ function insertData(data) {
                     </li>
                     <li class="list_img">
                         <div class="list_img">
-                            <a href="javascript:;">
-                                <img src="images/sp1.jpg" alt=""> 
+                            <a href="detail.html">
+                                <img src="${shop.img}" alt=""> 
                             </a>
                         </div>
                     </li>
                     <li class="list_con text_name"> 
                         <div class="list_text">
-                            <a href="javascript:;">${shop.name}</a> 
+                            <a href="detail.html">${shop.name}</a> 
                         </div>
                     </li>
                     <li class="list_price">
@@ -91,8 +95,32 @@ function insertData(data) {
         var $carttotalNum = $('.carttotalNum');
         var $reduce = $('.reduce');//获取减号
         var $plus = $('.plus');//获取加号
-        // var $total_price = $('.sum_price').html();//获取总价格
         //点击全选框子选框一起变化（默认是选中的）
+        //统计商品件数和总价格
+        function totalAll(){
+            //共几件商品
+            var sum=0;
+            $.each($('.sum'),function(index,item){
+                sum+= parseInt($.trim($(item).val()));
+            })
+            $('.carttotalNum').text(sum);
+            var sum_check = 0;
+            //已添加几件商品
+            $.each($('.sum'),function(index,item){
+                if($(this).parents('.order_lists').find('.list_chk').find('span').is('.border_icon')){
+                    sum_check+= parseInt($.trim($(item).val()));
+                }
+            })
+            $('.selTotalNum').text(sum_check);
+            //总价格
+            var total_sum = 0;
+            $.each($('.sum_price'),function(index,item){
+                if($(this).parents('.order_lists').find('.list_chk').find('span').is('.border_icon')){
+                    total_sum+= parseInt($.trim($(item).text()))
+                }
+            })
+                $('.cartTotalPrice').text(total_sum);
+        }
         $chooseAll.on('click',function(){
             if($(this).is('.border_icon')){
                 $btnAll.removeClass('border_icon');
@@ -102,11 +130,8 @@ function insertData(data) {
                 }).mouseout(function(){
                     $right.css('color','#fff');
                 })
-                //统计商品件数
-                $carttotalNum.html('');
-                $('.selTotalNum').html('');
-                //统计总价
-                $('.cartTotalPrice').html('');
+                //统计商品件数总价
+                totalAll();
             }else{
                 $btnAll.addClass('border_icon');
                 $right.css('color','#fff');
@@ -115,111 +140,74 @@ function insertData(data) {
                 }).mouseout(function(){
                     $right.css('color','#fff');
                 })
-                //统计商品件数
-                $carttotalNum.html($totalSum);
-                $('.selTotalNum').html($totalSum);
-                //统计总价
-                $('.cartTotalPrice').html($totalPrice);
+                //统计商品件数总价
+                totalAll();
             }  
         })
-        $sonCheck.each(function(){
-            $(this).click(function(){
-                if($(this).is('.border_icon')){
-                    //遍历子按钮
-                    var len = $sonCheck.length;
-                    var num = 0;
-                    $sonCheck.each(function () {
-                        if ($(this).is('.border_icon')) {
-                            $(this).removeClass('border_icon');
-                            $(this).mouseover(function(){
-                                $right.css('color','#666');
-                            }).mouseout(function(){
-                                $right.css('color','#fff');
-                            })
-                            num++;
-                        }
-                    });
-                    //如果所有的子按钮都没有选中则移除全选按钮
-                    if(num == len){
-                        if($chooseAll.is('.border_icon')){
-                            $chooseAll.removeClass('border_icon');
-                            $carttotalNum.html('');
-                            $('.selTotalNum').html('');
-                            $('.cartTotalPrice').html('');
-                        }    
-                    } 
-                }else{
-                    //遍历子按钮
-                    var len = $sonCheck.length;
-                    var num = 0;
-                    $sonCheck.each(function () {
-                        if ($(this).is('.border_icon') == false) {
-                            $(this).addClass('border_icon');
-                            $right.css('color','#fff');
-                            $(this).mouseover(function(){
-                                $right.css('color','#fff');
-                            }).mouseout(function(){
-                                $right.css('color','#fff');
-                            })
-                            //选中子商品总计要显示
-                            totalMoney();
-                            num++;
-                        }
-                    });
-                    //如果所有的子按钮都被选中则添加全选按钮
-                    if(num == len){
-                        if($chooseAll.is('.border_icon') == false){
-                            $chooseAll.addClass('border_icon');
-                            $right.css('color','#fff');
-                            totalMoney();
-                        }    
+        $sonCheck.click(function(){
+            if($(this).is('.border_icon')){
+                $(this).removeClass('border_icon');
+                $(this).mouseover(function(){
+                    $right.css('color','#666');
+                }).mouseout(function(){
+                    $right.css('color','#fff');
+                })
+                totalAll();
+                if($sonCheck.is('.border_icon')==false){
+                    if($chooseAll.is('.border_icon')){
+                        $chooseAll.removeClass('border_icon');
                     }
                 }
-            })
-        })
-        //当全选框被选中时统计价格商品件数
-        $plus.on('click',function(){
-            $totalSum = Number($('.sum').val())+1;
-            $('.sum').val($totalSum);
-            $totalPrice = ($price-0)*$totalSum;//计算价格
-            $('.sum_price').html($totalPrice)//小计
-            if($btnAll.is('.border_icon')){
-                $carttotalNum.html($totalSum);
-                $('.selTotalNum').html($totalSum);
-                $('.cartTotalPrice').html($totalPrice);
             }else{
-                $carttotalNum.html('');
-                $('.selTotalNum').html('');
-                $('.cartTotalPrice').html('');
+                if ($(this).is('.border_icon') == false) {
+                    $(this).addClass('border_icon');
+                    $right.css('color','#fff');
+                    $(this).mouseover(function(){
+                        $right.css('color','#fff');
+                    }).mouseout(function(){
+                        $right.css('color','#fff');
+                    })
+                    totalAll();
+                    //选中子商品总计要显示
+                    totalMoney();
+                    //添加全选框????
+                    var num=0;
+                    $.each($sonCheck,function(index){
+                        if($(this).is('.border_icon')){
+                            num++;
+                            if(num==$sonCheck.length){
+                                if($chooseAll.is('.border_icon'==false)){
+                                    $chooseAll.addClass('border_icon');
+                                }
+                            }
+                        }
+                    
+                    })
+                }
+                
             }
         })
-        $reduce.on('click',function(){
-            if($totalSum > 1){
-                $totalSum = Number($('.sum').val())-1;
-                $('.sum').val($totalSum);
-                $totalPrice = ($price-0)*$totalSum;
-                $('.sum_price').html($totalPrice)//小计
-                if($btnAll.is('.border_icon')){
-                    $carttotalNum.html($totalSum);
-                    $('.selTotalNum').html($totalSum);
-                    $('.cartTotalPrice').html($totalPrice);
-                }else{
-                    $carttotalNum.html('');
-                    $('.selTotalNum').html('');
-                    $('.cartTotalPrice').html('');
-                }
+        //当全选框被选中时统计价格商品件数
+        $plus.click(function(){
+            $totalSum = Number($(this).parents('.amount_box').find('.sum').val())+1;
+            $(this).parents('.amount_box').find('.sum').val($totalSum);
+            $price = $(this).parents('.order_lists').find('.list_price').find('.price').text();
+            $totalPrice = ($price-0)*$totalSum;//计算价格
+            $(this).parents('.order_lists').find('.list_sum').find('.sum_price').html($totalPrice)//小计
+            totalAll();
+        })
+        $reduce.click(function(){
+            if($(this).parents('.amount_box').find('.sum').val() > 1){
+                $totalSum = Number($(this).parents('.amount_box').find('.sum').val())-1;
+                $(this).parents('.amount_box').find('.sum').val($totalSum);
+                $price = $(this).parents('.order_lists').find('.list_price').find('.price').text();
+                $totalPrice = ($price-0)*$totalSum;//计算价格
+                $(this).parents('.order_lists').find('.list_sum').find('.sum_price').html($totalPrice)//小计
+                totalAll();
             }
         })
         //默认有件数和总价
-        if($btnAll.is('.border_icon')){
-            $carttotalNum.html($totalSum);
-            $('.selTotalNum').html($totalSum);
-            $('.cartTotalPrice').html($totalPrice);
-        }else{
-            $carttotalNum.html('');
-            $('.selTotalNum').html('');
-            $('.cartTotalPrice').html('');
-        }
+        totalAll();
         //删除商品
         var $order_lists = null;
         var $order_content = '';
@@ -245,34 +233,92 @@ function insertData(data) {
         //点击确定按钮
         $('.dialog-sure').click(function () {
             $order_lists.remove();//移除ul
-            if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
+            $order_content.remove();
+            // localStorage.removeItem("name");????怎么在本地删除
+            console.log($('.cartBox').find('.order_content')[0]);
+            if ($('.cartBox').find('.order_content')[0]==undefined) {
                 //上下都没有商品了，移除整个商品区
-                $order_content.parents('.cartBox').remove();
+                $('.cartBox').prev().remove();
+                $('.cartBox').next().remove()
+                $('.car_empty').css('display','block');
             }
             //移除后关闭
             closeM();
             
             //重新计算总价
-            totalMoney();
+            totalAll();
         })
-        function totalMoney(){
-            var total_money = 0;
-            var total_count = 0;
-            $sonCheck.each(function(){
-                if($(this).is('.border_icon')){
-                    var goods = Number($totalPrice);//小计
-                    var num = Number($totalSum);//件数
-                    total_money += goods;
-                    total_count += num;
-                }
-            });
-            $carttotalNum.html(total_count);
-            $('.selTotalNum').html(total_count);
-            $('.cartTotalPrice').html(total_money);
-        }
     })
-
-
+    
+    
 };
+// 渲染推荐商品
+// 获取数据
+function getLikeData() {
+    var params = {
+        url: 'json/shop.json',
+        success:function (data) {
+            insertLike(data);
+        }
+    };
+    sendAjax(params);
+};
+//将数据渲染到页面中
+function insertLike(data) {
+    data = data.data;
+    var arr = [];
+    for (var i=0;i<data.length;i++){
+        arr.push(`<li class="guss_list">
+                    <dl>
+                        <dt class="guss_img">
+                            <a href="detail.html">
+                                <img src="${data[i].img}" alt="小米路由器Pro">
+                            </a>
+                        </dt>
+                        <dd class="guss_name">
+                            <a href="detail.html">${data[i].name}</a>
+                        </dd>
+                        <dd class="guss_price">
+                            ${data[i].price}
+                            <span>元</span>
+                        </dd>
+                        <dd class="guss_tips">
+                            7185人好评
+                            <a href="javascript:;" class="btn_add">加入购物车</a>
+                        </dd>
+                    </dl>
+                </li>`)
+    }
+    var $like = document.querySelector('.guss_row');
+    $like.innerHTML = arr.join('');
+    //点击加入购物车
+    $('.btn_add').click(function(){
+        // 获取商品名字
+        var name = $(this).parents('dl').find('.guss_name').find('a').text();
+        // 获取商品数量
+        var count = 1;
+        addCar(name,count);
+        count++;
+        location.reload(1);
+    })
+};
+function addCar(name,count){
+        //从本地中取出来使用
+        var shopList = localStorage.shopList || '[]';
+        shopList = JSON.parse(shopList);
+        for (var j = 0;j<shopList.length;j++){
+            if(shopList[j].name === name){
+                //证明商品已经存在
+                //累计即可
+                shopList[j].count = Number(shopList[j].count) + Number(count);
+                break;
+            }
+        }
+        if(j === shopList.length){
+            //商品存在添加一条新数据
+            shopList.push({name: name, count: count});
+        }
+        //再保存到本地
+        localStorage.shopList = JSON.stringify(shopList);
     
-    
+}
