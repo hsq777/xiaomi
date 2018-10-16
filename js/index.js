@@ -2,9 +2,8 @@
 var index=(function () {
     return{
         init:function () {
-            // this.$list=document.querySelector(".row-list");
             this.event();
-            // this.getData();
+            
         },
         event:function () {
             var _this=this;
@@ -46,7 +45,17 @@ var index=(function () {
                 //
                 // }
             });
-
+            //购物车显示数量
+            $('.shop-car').find('span').text((_this.getCount()));
+            //鼠标滑过切换商品
+            $('.machine-more').find('li').mouseover(function (){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            });
+            $('.zhineng-more').find('li').mouseover(function (){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            });
             //nav隐藏下拉框
             // $(".nav-item").mouseover(function(){
             //     $(".nav-hidden").css('height',"234px");
@@ -88,37 +97,18 @@ var index=(function () {
             // });
 
 
+        },
+        getCount:function (){
+            //从本地中取出来使用
+            var shopList = localStorage.shopList || '[]',
+                count = 0;
+            shopList = JSON.parse(shopList);
+            for (var j = 0;j<shopList.length;j++){
+                // console.log(shopList[j].count)
+                count+=shopList[j].count;
+            }
+            return count;
         }
-        //获取数据
-        // getData:function () {
-        //     var _this = this;
-        //     var params = {
-        //         url: 'json/shop.json',
-        //         success:function (data) {
-        //             console.log(data);
-        //             _this.insertData(data);
-        //         }
-        //     };
-        //     sendAjax(params);
-        // },
-        // //将数据渲染到页面中
-        // insertData:function (data) {
-        //     data = data.data;
-        //     var arr = [];
-        //     for (var i=0;i<data.length;i++){
-        //         arr.push(`<li>
-        //                     <a href="javascript:;">
-        //                         <img src="${data[i].img}">
-        //                         <h2>${data[i].h2}</h2>
-        //                         <p>${data[i].p}</p>
-        //                         <span>${data[i].span}</span>
-        //                     </a>
-			// 		    </li>`)
-        //     }
-        //     this.$list.innerHTML = arr.join('');
-        // }
-
-
     }
 }());
 

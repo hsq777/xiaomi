@@ -4,7 +4,6 @@ function getShopList() {
         url: 'json/shop.json',
         success: function (data) {
             shopList = data.data;
-            // console.log(shopList);
             getData();
         }
     };
@@ -13,7 +12,6 @@ function getShopList() {
 //获取购物车数据
 function getData() {
     carShopList = JSON.parse(localStorage.shopList || '[]');
-    // console.log(carShopList);
     insertData(carShopList);
 };
 //把购物车添加到页面中
@@ -23,14 +21,11 @@ function insertData(data) {
         //通过名字获取商品
         var shop;
         for (var j = 0; j < shopList.length; j++) {
-            // console.log(shopList[j]);
             if (shopList[j].name == data[i].name) {
                 shop = shopList[j];
-                console.log(shopList[j]);
                 break;
             }
         }
-        // console.log(shop);
         arr.push(
             `<div class="order_content">
                 <ul class="order_lists">
@@ -70,14 +65,13 @@ function insertData(data) {
                     </li>
                     <!--操作-->
                     <li class="list_op">
-                        <a href="javascript:;" class="delBtn">
+                        <a href="javascript:;" class="delBtn" attr-id="${data[i].id}" attr-index="${i}">
                             <i class="iconfont icon-guanbi"></i>
                         </a>
                     </li>
                 </ul>
             </div>`
-            )
-            
+        )
     }
     var $carMain = document.querySelector('.cartBox');
     $carMain.innerHTML = arr.join('');
@@ -88,11 +82,10 @@ function insertData(data) {
         var $chooseAll = $('.btn_border');//全选按钮
         var $sonCheck = $('.son_check');//子按钮
         var $btnAll = $('.btn_all');//所有按钮
-        var $right = $('.icon-dagou1');//打勾iconfont
+        // var $right = $('.icon-dagou1');//打勾iconfont
         var $totalSum = $('.sum').val();//获取件数
         var $price = $('.price').html()//获取单价
         var $totalPrice = $('.sum_price').html()//获取小计
-        var $carttotalNum = $('.carttotalNum');
         var $reduce = $('.reduce');//获取减号
         var $plus = $('.plus');//获取加号
         //点击全选框子选框一起变化（默认是选中的）
@@ -116,30 +109,31 @@ function insertData(data) {
             var total_sum = 0;
             $.each($('.sum_price'),function(index,item){
                 if($(this).parents('.order_lists').find('.list_chk').find('span').is('.border_icon')){
-                    total_sum+= parseInt($.trim($(item).text()))
+                    total_sum+= Number($.trim($(item).text()));
                 }
             })
-                $('.cartTotalPrice').text(total_sum);
+                $('.cartTotalPrice').text(total_sum.toFixed(2));
         }
         $chooseAll.on('click',function(){
             if($(this).is('.border_icon')){
                 $btnAll.removeClass('border_icon');
-                //
-                $(this).mouseover(function(){
-                    $right.css('color','#666');
-                }).mouseout(function(){
-                    $right.css('color','#fff');
-                })
+                //鼠标滑过样式
+                // $(this).mouseover(function(){
+                //     $(this).find('i').css('color','#666');
+                // }).mouseout(function(){
+                //     $(this).find('i').css('color','#fff');
+                // })
                 //统计商品件数总价
                 totalAll();
             }else{
                 $btnAll.addClass('border_icon');
-                $right.css('color','#fff');
-                $(this).mouseover(function(){
-                    $right.css('color','#fff');
-                }).mouseout(function(){
-                    $right.css('color','#fff');
-                })
+                // $right.css('color','#fff');
+                //鼠标滑过样式
+                // $(this).mouseover(function(){
+                //     $(this).find('i').css('color','#fff');
+                // }).mouseout(function(){
+                //     $(this).find('i').css('color','#fff');
+                // })
                 //统计商品件数总价
                 totalAll();
             }  
@@ -147,11 +141,11 @@ function insertData(data) {
         $sonCheck.click(function(){
             if($(this).is('.border_icon')){
                 $(this).removeClass('border_icon');
-                $(this).mouseover(function(){
-                    $right.css('color','#666');
-                }).mouseout(function(){
-                    $right.css('color','#fff');
-                })
+                // $(this).mouseover(function(){
+                //     $right.css('color','#666');
+                // }).mouseout(function(){
+                //     $right.css('color','#fff');
+                // })
                 totalAll();
                 if($sonCheck.is('.border_icon')==false){
                     if($chooseAll.is('.border_icon')){
@@ -161,32 +155,19 @@ function insertData(data) {
             }else{
                 if ($(this).is('.border_icon') == false) {
                     $(this).addClass('border_icon');
-                    $right.css('color','#fff');
-                    $(this).mouseover(function(){
-                        $right.css('color','#fff');
-                    }).mouseout(function(){
-                        $right.css('color','#fff');
-                    })
-                    totalAll();
-                    //选中子商品总计要显示
-                    totalMoney();
                     //添加全选框????
-                    var num=0;
-                    $.each($sonCheck,function(index){
-                        if($(this).is('.border_icon')){
-                            num++;
-                            if(num==$sonCheck.length){
-                                if($chooseAll.is('.border_icon'==false)){
-                                    $chooseAll.addClass('border_icon');
-                                }
-                            }
-                        }
-                    
-                    })
+                    // num++;
+                    // console.log(num);
+                    // if(num==$sonCheck.length){
+                    //     if($chooseAll.is('.border_icon'==false)){
+                    //         $chooseAll.addClass('border_icon');
+                    //     }
+                    // }
+                    totalAll();
+                    totalMoney();
                 }
-                
             }
-        })
+        })  
         //当全选框被选中时统计价格商品件数
         $plus.click(function(){
             $totalSum = Number($(this).parents('.amount_box').find('.sum').val())+1;
@@ -213,10 +194,33 @@ function insertData(data) {
         var $order_content = '';
         //点击删除键时
         $('.delBtn').click(function () {
-            $order_lists = $(this).parents('.order_lists');//要删除的那一栏的ul
-            $order_content = $order_lists.parents('.order_content');//ul的上一级
+            // $order_lists = $(this).parents('.order_lists');//要删除的那一栏的ul
+            // $order_content = $order_lists.parents('.order_content');//ul的上一级
+            var list = JSON.parse(localStorage.shopList);
+            var $index = $(this).attr("attr-index");
+            console.log($(this).attr("attr-index"))
             $('.model_bg').fadeIn(300);
             $('.my_model').fadeIn(300);
+            //点击确定删除数据
+            //在本地中删除数据
+            $('.dialog-sure').click(function () {
+                list.splice($index,1);
+                localStorage.shopList = JSON.stringify(list);
+                getData();
+                //移除后关闭
+                closeM();
+                //重新计算总价
+                totalAll();
+                //没有商品就去掉头尾
+                console.log(localStorage.shopList);
+                if (localStorage.shopList=="[]") {
+                    //刷新又出现？？？
+                    //上下都没有商品了，移除整个商品区
+                    $('.bar-wrapper').css('display','none');
+                    $('.carMain_hd').css('display','none');
+                    $('.car_empty').css('display','block');
+                }
+            })
         });
         //点击×时关闭
         $('.closeModel').click(function () {
@@ -230,27 +234,7 @@ function insertData(data) {
             $('.model_bg').fadeOut(300);
             $('.my_model').fadeOut(300);
         }
-        //点击确定按钮
-        $('.dialog-sure').click(function () {
-            $order_lists.remove();//移除ul
-            $order_content.remove();
-            // localStorage.removeItem("name");????怎么在本地删除
-            console.log($('.cartBox').find('.order_content')[0]);
-            if ($('.cartBox').find('.order_content')[0]==undefined) {
-                //上下都没有商品了，移除整个商品区
-                $('.cartBox').prev().remove();
-                $('.cartBox').next().remove()
-                $('.car_empty').css('display','block');
-            }
-            //移除后关闭
-            closeM();
-            
-            //重新计算总价
-            totalAll();
-        })
     })
-    
-    
 };
 // 渲染推荐商品
 // 获取数据
@@ -268,57 +252,62 @@ function insertLike(data) {
     data = data.data;
     var arr = [];
     for (var i=0;i<data.length;i++){
-        arr.push(`<li class="guss_list">
-                    <dl>
-                        <dt class="guss_img">
-                            <a href="detail.html">
-                                <img src="${data[i].img}" alt="小米路由器Pro">
-                            </a>
-                        </dt>
-                        <dd class="guss_name">
-                            <a href="detail.html">${data[i].name}</a>
-                        </dd>
-                        <dd class="guss_price">
-                            ${data[i].price}
-                            <span>元</span>
-                        </dd>
-                        <dd class="guss_tips">
-                            7185人好评
-                            <a href="javascript:;" class="btn_add">加入购物车</a>
-                        </dd>
-                    </dl>
-                </li>`)
+        // console.log(data[i].id)
+        arr.push(
+            `<li class="guss_list">
+                <dl>
+                    <dt class="guss_img">
+                        <a href="detail.html">
+                            <img src="${data[i].img}" alt="小米路由器Pro">
+                        </a>
+                    </dt>
+                    <dd class="guss_name">
+                        <a href="detail.html">${data[i].name}</a>
+                    </dd>
+                    <dd class="guss_price">
+                        ${data[i].price}
+                        <span>元</span>
+                    </dd>
+                    <dd class="guss_tips">
+                        7185人好评
+                        <a href="javascript:;" class="btn_add attr-id=${data[i].id}" attr-index="${i}">加入购物车</a>
+                    </dd>
+                </dl>
+            </li>`
+        )
     }
     var $like = document.querySelector('.guss_row');
     $like.innerHTML = arr.join('');
     //点击加入购物车
     $('.btn_add').click(function(){
+        // 获取商品index
+        var index = $(this).attr("attr-index");
+        console.log(index);
         // 获取商品名字
         var name = $(this).parents('dl').find('.guss_name').find('a').text();
         // 获取商品数量
         var count = 1;
         addCar(name,count);
         count++;
-        location.reload(1);
+        location.reload(1); 
     })
 };
 function addCar(name,count){
-        //从本地中取出来使用
-        var shopList = localStorage.shopList || '[]';
-        shopList = JSON.parse(shopList);
-        for (var j = 0;j<shopList.length;j++){
-            if(shopList[j].name === name){
-                //证明商品已经存在
-                //累计即可
-                shopList[j].count = Number(shopList[j].count) + Number(count);
-                break;
-            }
+    //从本地中取出来使用
+    var shopList = localStorage.shopList || '[]';
+    shopList = JSON.parse(shopList);
+    for (var j = 0;j<shopList.length;j++){
+        if(shopList[j].name === name){
+            //证明商品已经存在
+            //累计即可
+            shopList[j].count = Number(shopList[j].count) + Number(count);
+            break;
         }
-        if(j === shopList.length){
-            //商品存在添加一条新数据
-            shopList.push({name: name, count: count});
-        }
-        //再保存到本地
-        localStorage.shopList = JSON.stringify(shopList);
-    
+    }
+    if(j === shopList.length){
+        //商品存在添加一条新数据
+        shopList.push({name: name, count: count});
+    }
+    //再保存到本地
+    localStorage.shopList = JSON.stringify(shopList);
 }

@@ -542,7 +542,7 @@
 }
 .row-star:hover{
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    transform:translateY(-5px);<!--向上移动5px； -->
+    transform:translateY(-5px);   
     overflow: hidden;
     transition:all 0.3s ease;
 }
@@ -717,17 +717,24 @@
     color: #424242;
     float: left;
 }
-/*鼠标滑过设置class为active*/
+.machine-more li a{
+    color: #424242;
+}
 .show-prd .active{
     padding-bottom: 4px;
-    color: #ff6700;
     border-bottom: 2px solid #ff6700;
 }
-/*.machine-more li:hover{*/
-    /*padding-bottom: 4px;*/
-    /*color: #ff6700;*/
-    /*border-bottom: 2px solid #ff6700;*/
-/*}*/
+.show-prd .active a{
+    color: #ff6700;
+}
+/*鼠标滑过设置class为active；离开不移除*/
+/* .machine-more li:hover{
+    padding-bottom: 4px;
+    border-bottom: 2px solid #ff6700;
+}
+.machine-more li a:hover{
+    color: #ff6700;
+} */
 /*鼠标滑过第二种样式*/
 .row-star-another li:hover{
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -776,8 +783,11 @@
 .zhineng-more li{
     margin-left: 28px;
     font-size: 16px;
-    color: #424242;
+    
     float: left;
+}
+.zhineng-more li a{
+    color: #424242;
 }
 /*为你推荐*/
 .recommend{

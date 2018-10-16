@@ -5,13 +5,15 @@ $(".guanbi").on('click', function () {
 $(".btn-wrap-buy").click(function () {
     //获取商品名字以及数量（默认为1）
     var name = $('.pro-title').text() +" "+ $('.name-color').find('a').text();
-    // var price = $('.pro-price').text();
     var count = 1;
     console.log(count);//？？？？触发了两次
     addCar(name,count);
     count++;
+    location.href = 'success.html';
 });
-
+$('.btn_like').click(function(){
+    location.href = 'login.html';
+})
 //将商品加入到购物车
 function  addCar(name,count) {
     //从本地中取出来使用

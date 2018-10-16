@@ -2,9 +2,168 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>成功加入</title>
+    <title>成功加入购物车</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" href="css/detailCommon.css">
+    <link rel="stylesheet" href="css/success.css">
 </head>
 <body>
-    登入成功
+    <!--头部-->
+    <div class="header"></div>
+    <!--nav-->
+    <div class="nav"></div>
+    <!--成功提示-->
+    <div class="page_main">
+        <div class="container">
+            <div class="success_box">
+                <div class="goods_content">
+                    <div class="goods_info">
+                        <h3>已成功加入购物车！</h3>
+                    </div>
+                </div>
+                <div class="active_btn">
+                    <a href="detail.html" class="back_btn">返回上一级</a>
+                    <a href="shopcar.html" class="shop_btn">去购物车结算</a>
+                </div>
+            </div>
+            <!--猜你喜欢-->
+            <div class="guss_like">
+                <h2 class="guss_title">
+                    <span>买购物车中商品的人还买了</span>
+                </h2>
+                <div class="guss_shop">
+                    <ul class="guss_row">
+                        <!-- <li class="guss_list">
+                            <dl>
+                                <dt class="guss_img">
+                                    <a href="javascript:;">
+                                        <img src="images/guss.jpg" alt="小米路由器Pro">
+                                    </a>
+                                </dt>
+                                <dd class="guss_name">
+                                    <a href="javascript:;">小米路由器Pro</a>
+                                </dd>
+                                <dd class="guss_price">
+                                    449
+                                    <span>元</span>
+                                </dd>
+                                <dd class="guss_tips">
+                                    7185人好评
+                                    <a href="javascript:;" class="btn_add">加入购物车</a>
+                                </dd>
+                            </dl>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部服务-->
+    <div class="footer_service"></div>
+
+    <!--底部-->
+    <div class="footer"></div>
+
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/ajax.2.0.0.js"></script>
+    <script src="js/success.js"></script>
+    <script>
+        $('.header').load('common.html #top',function () {
+            $(".login").on('click',function () {
+                location.href='login.html';
+            });
+            $(".register").on('click',function () {
+                location.href='register.html';
+            });
+            $(".shop-car").on('click',function(){
+                location.href='shopcar.html';
+            });
+            $('.shop-car').find('span').text(getCount());
+            function getCount(){
+            //从本地中取出来使
+            var shopList = localStorage.shopList || '[]',
+                count = 0;
+            shopList = JSON.parse(shopList);
+            for (var j = 0;j<shopList.length;j++){
+                // console.log(shopList[j].count)
+                count+=shopList[j].count;
+            }
+            return count;
+            }
+        });
+        $('.nav').load('common.html #nav',function () {
+            $("#banner_menu_wrap").children().hover(function() {
+                $(this).css("background", "#ff6700");
+                $(this).children(".banner_menu_content").css("border", "1px solid #F0F0F0").show();
+            }, function() {
+                $(this).css("background", "none");
+                $(this).children(".banner_menu_content").css("border", "0px solid #F0F0F0").hide();
+            });
+            $(function() {
+                var i = 0;
+                var big_banner_pic = $("#big_banner_pic");
+                var allimg = $("#big_banner_pic li").length;
+                function img_change() {
+                    var img_i = i * -1226 + "px";
+                    big_banner_pic.animate({
+                        opacity: ".2"
+                    }, 100, function() {
+                        big_banner_pic.css("left", img_i);
+                        big_banner_pic.animate({
+                            opacity: "1"
+                        }, 100);
+                    })
+                }
+                function automatic() {
+                    i += 1;
+                    if (i >= allimg) {
+                        i = 0;
+                    }
+                    img_change();
+                }
+                change_self_time = setInterval(automatic, 3000);
+                $("#big_banner_change_wrap").hover(function() {
+                    clearInterval(change_self_time);
+                    $("#big_banner_change_wrap").children().show();
+                }, function() {
+                    change_self_time = setInterval(automatic, 3000);
+                    $("#big_banner_change_wrap").children().hide();
+                })
+                $("#big_banner_change_prev").click(function() {
+                    i += 1;
+                    if (i >= allimg) {
+                        i = 0;
+                    }
+                    img_change();
+                })
+                $("#big_banner_change_next").click(function() {
+                    i -= 1;
+                    if (i <= 0) {
+                        i = allimg - 1;
+                    }
+                    img_change();
+                })
+            });
+            $(".logo").on('click',function () {
+                location.href='index.html';
+            });
+
+            $(".btn-text").on('focus',function(){
+                $(".search-list").css({"display":"block","border-color":"#ff6700","border-top":"1px #ff6700 solid"});
+                $(".btn-text").css("border-color","#ff6700");
+                $(".btn-sub").css("border-color","#ff6700");
+
+            });
+            $(".btn-text").on('blur',function(){
+                $(".search-list").css("display","none");
+                $(".btn-text").css("border-color","#e0e0e0");
+                $(".btn-sub").css("border-color","#e0e0e0");
+            });
+        });
+
+        $('.footer_service').load('common.html .site-footer');
+        $('.footer').load('common.html .site-info');
+        getLikeData();
+    </script>
 </body>
 </html>

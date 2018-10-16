@@ -12,7 +12,10 @@ var login=(function(){
 			this.event();
 		},
 		event:function(){
-			var _this=this;
+            var _this=this;
+            $('.register').click(function(){
+                location.href='register.html';
+            })
 			//登入方式切换
 			this.$loginEwm.onclick=function () {
                 _this.$loginUser.style.display='none';
@@ -70,7 +73,7 @@ var login=(function(){
             if(data.code == 200){
                 // document.cookie = "token=" + data.data.token;
                 //document.cookie = "user-id=" + data.data.id;
-				location.href = 'success.html';
+				location.href = 'index.html';
             }else{
 				_this.$tipError.style.display='block';
                 $('.err-user').css('display','inline-block');

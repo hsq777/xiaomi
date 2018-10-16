@@ -1,0 +1,167 @@
+.page_main {
+  width: 100%;
+  height: 840px;
+  padding: 38px 0;
+  background: #f5f5f5;
+}
+.page_main .container {
+  width: 1226px;
+  height: 840px;
+  margin: 0 auto;
+}
+.page_main .container .success_box {
+  width: 1226px;
+  margin-bottom: 26px;
+  padding: 0 0 28px 0;
+  height: 68px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.page_main .container .success_box .goods_content {
+  float: left;
+  margin-left: 100px;
+}
+.page_main .container .success_box .goods_content .goods_info {
+  float: right;
+}
+.page_main .container .success_box .goods_content .goods_info h3 {
+  color: #424242;
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: 3px;
+}
+.page_main .container .success_box .active_btn {
+  float: right;
+}
+.page_main .container .success_box .active_btn a {
+  display: block;
+  float: left;
+  width: 180px;
+  height: 38px;
+  margin: 5px 0 0 12px;
+  text-align: center;
+  line-height: 38px;
+  font-size: 14px;
+}
+.page_main .container .success_box .active_btn .back_btn {
+  border: 1px solid #b0b0b0;
+  color: #424242;
+}
+.page_main .container .success_box .active_btn .shop_btn {
+  color: #fff;
+  background: #ff6700;
+  border: 1px solid #ff6700;
+}
+/*猜你喜欢*/
+.guss_like{
+  width: 1226px;
+  height: 693px;
+  margin-top: 60px;
+}
+.guss_title{
+  width: 1226px;
+  height: 50px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 400;
+  color: #757575;
+  position: relative;
+}
+.guss_title span{
+  position: absolute;
+  top: -20px;
+  left: 372px;
+  height: 40px;
+  width: 482px;
+  line-height: 40px;
+  text-align: center;
+  display: block;
+  background-color: #f5f5f5;
+}
+.guss_shop{
+  width: 1226px;
+  height: 628px;
+  position: relative;
+}
+.guss_row{
+  width: 1240px;
+  height: 628px;
+  position: absolute;
+  left: -14px;
+}
+.guss_list{
+  float: left;
+  width: 234px;
+  height: 300px;
+  margin: 0 0 14px 14px;
+  background: #fff;
+}
+.guss_list dl{
+  width: 194px;
+  height: 280px;
+  padding: 0 20px;
+}
+.guss_list dl dt{
+  width: 194px;
+  height: 145px;
+  padding: 40px 0 15px 0;
+  margin: 0;
+}
+.guss_list .guss_img a{
+  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+  display: block;
+}
+.guss_list .guss_img a img{
+  width: 140px;
+  height: 140px;
+}
+.guss_list .guss_name{
+  width: 194px;
+  height: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.guss_list .guss_name a{
+  font-size: 14px;
+  color: #333;
+}
+.guss_list .guss_price{
+  width: 194px;
+  height: 21px;
+  margin-bottom: 10px;
+  color: #ff6700;
+  font-size: 14px;
+  text-align: center;
+}
+.guss_list .guss_tips{
+  width: 194px;
+  height: 21px;
+  text-align: center;
+  font-size: 12px;
+  color: #757575;
+  position: relative;
+}
+.guss_list:hover .guss_tips .btn_add{
+  display: block;
+}
+.guss_list .guss_tips .btn_add{
+  width: 120px;
+  position: absolute;
+  left: 37px;
+  top: 0;
+  border:1px solid #ff6700;
+  background: #fff;
+  color: #ff6700;
+  height: 28px;
+  font-size: 12px;
+  line-height: 28px;
+  display: none;
+}
+.guss_list .guss_tips .btn_add:hover{
+  background: #ff6700;
+  color: #fff;
+}

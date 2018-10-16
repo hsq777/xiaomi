@@ -90,7 +90,7 @@ var register=(function(){
 		register: function(data) {
 			if(data.code == 200) {
 				alert('注册成功');
-				location.href = 'success.html';
+				location.href = 'login.html';
                 //document.cookie = "token=" + data.data.token;
                 // document.cookie = "user-id=" + data.data.id;
 			  }

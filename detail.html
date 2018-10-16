@@ -119,7 +119,7 @@
                         </div>
                         <ul class="btn-wrap">
                             <li class="btn-wrap-buy"><a href="javascript:;">加入购物车</a></li>
-                            <li>
+                            <li class="btn_like">
                                 <a href="javascript:;">
                                     <i></i>
                                     喜欢
@@ -157,7 +157,6 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/detail.js"></script>
-    <script src="js/detail.js"></script>
     <script>
         $('.header').load('common.html #top',function () {
             $(".login").on('click',function () {
@@ -168,7 +167,19 @@
             });
             $(".shop-car").on('click',function(){
                 location.href='shopcar.html';
-            })
+            });
+            $('.shop-car').find('span').text(getCount());
+            function getCount(){
+            //从本地中取出来使
+            var shopList = localStorage.shopList || '[]',
+                count = 0;
+            shopList = JSON.parse(shopList);
+            for (var j = 0;j<shopList.length;j++){
+                // console.log(shopList[j].count)
+                count+=shopList[j].count;
+            }
+            return count;
+            }
         });
         $('.nav').load('common.html #nav',function () {
             $("#banner_menu_wrap").children().hover(function() {
