@@ -46,7 +46,7 @@
         {
             "id": 8,
             "name": "米家签字笔",
-            "price": 9.9,
+            "price": 10,
             "img": "images/gk2.jpg"
         },
         {
@@ -58,7 +58,7 @@
         {
             "id": 10,
             "name": "最生活毛巾·青春系列",
-            "price": 19.9,
+            "price": 20,
             "img": "images/gk9.jpg"
         }
     ]
