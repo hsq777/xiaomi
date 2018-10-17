@@ -34,6 +34,7 @@ var login=(function(){
                 _this.$ewm.style.display='none';
                 _this.$loginEwm.style.color='#666';
                 _this.$loginClick.style.color='#f56600';
+                $('.login-phone').css('display','none');
             };
 			$('.phone').on('click',function () {
                 _this.$loginUser.style.display='none';

@@ -112,7 +112,7 @@ function insertData(data) {
                     total_sum+= Number($.trim($(item).text()));
                 }
             })
-                $('.cartTotalPrice').text(total_sum.toFixed(2));
+                $('.cartTotalPrice').text(total_sum);
         }
         $chooseAll.on('click',function(){
             if($(this).is('.border_icon')){
@@ -213,13 +213,14 @@ function insertData(data) {
                 totalAll();
                 //没有商品就去掉头尾
                 console.log(localStorage.shopList);
-                if (localStorage.shopList=="[]") {
-                    //刷新又出现？？？
-                    //上下都没有商品了，移除整个商品区
-                    $('.bar-wrapper').css('display','none');
-                    $('.carMain_hd').css('display','none');
-                    $('.car_empty').css('display','block');
-                }
+                clearCar();
+                // if (localStorage.shopList=="[]") {
+                //     //刷新又出现？？？
+                //     //上下都没有商品了，移除整个商品区
+                //     $('.bar-wrapper').css('display','none');
+                //     $('.carMain_hd').css('display','none');
+                //     $('.car_empty').css('display','block');
+                // }
             })
         });
         //点击×时关闭
@@ -310,4 +311,13 @@ function addCar(name,count){
     }
     //再保存到本地
     localStorage.shopList = JSON.stringify(shopList);
+};
+function clearCar(){
+    //从本地中取出来使用
+    var shopList = localStorage.shopList || '[]';
+    if(shopList == '[]'){
+        $('.bar-wrapper').css('display','none');
+        $('.carMain_hd').css('display','none');
+        $('.car_empty').css('display','block');
+    }
 }

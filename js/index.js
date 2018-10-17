@@ -29,32 +29,63 @@ var index=(function () {
             });
             $(".btn-r").on('click',function () {
                 $(".wrapper-list").css({"left":"-758px","transition":"0.5s"});
-                $(".wrapper-list .icon-xiangyou").css("color","#e8e3e0");
-                $(".wrapper-list .icon-xiangzuo").css("color","#b0b0b0")
+                $(".icon-xiangyou").css("color","#e8e3e0");
+                $(".icon-xiangzuo").css("color","#b0b0b0")
             });
             $(".btn-l").on('click',function () {
                 $(".wrapper-list").css("left","0");
                 $(".icon-xiangyou").css("color","#b0b0b0");
                 $(".icon-xiangzuo").css("color","#e8e3e0")
             });
-            //为你推荐按键（未完成）
+            //为你推荐按键
             $(".recd-btn-r").on('click',function () {
                 $(".recd-main-list").css({'left':'-1226px',"transition":"0.5s"});
-
-                // if(){
-                //
-                // }
+                $(".icon-xiangyou").css("color","#e8e3e0");
+                $(".icon-xiangzuo").css("color","#b0b0b0")
+            });
+            $(".recd-btn-l").on('click',function () {
+                $(".recd-main-list").css("left","0");
+                $(".icon-xiangyou").css("color","#b0b0b0");
+                $(".icon-xiangzuo").css("color","#e8e3e0")
             });
             //购物车显示数量
             $('.shop-car').find('span').text((_this.getCount()));
+            $('.bar-top').find('.bar-shop').find('span').text((_this.getCount()));
             //鼠标滑过切换商品
             $('.machine-more').find('li').mouseover(function (){
                 $(this).addClass('active');
                 $(this).siblings().removeClass('active');
+                var $index = $(this).index();
+                $('.hot_shop').eq($index).css('display','block');
+                $('.hot_shop').eq($index).siblings().css('display','none');
             });
             $('.zhineng-more').find('li').mouseover(function (){
                 $(this).addClass('active');
                 $(this).siblings().removeClass('active');
+                var $index = $(this).index();
+                $('.zhineng').eq($index).css('display','block');
+                $('.zhineng').eq($index).siblings().css('display','none');
+            });
+            $('.dapei_more').find('li').mouseover(function (){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+                var $index = $(this).index();
+                $('.dapei').eq($index).css('display','block');
+                $('.dapei').eq($index).siblings().css('display','none');
+            });
+            $('.peijian_more').find('li').mouseover(function (){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+                var $index = $(this).index();
+                $('.peijian').eq($index).css('display','block');
+                $('.peijian').eq($index).siblings().css('display','none');
+            });
+            $('.zhoubian_more').find('li').mouseover(function (){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+                var $index = $(this).index();
+                $('.zhoubian').eq($index).css('display','block');
+                $('.zhoubian').eq($index).siblings().css('display','none');
             });
             //nav隐藏下拉框
             // $(".nav-item").mouseover(function(){

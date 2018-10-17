@@ -9,7 +9,13 @@
 }
 .main-logo{
     height: 55px;
-    background: url("../images/mi_03.jpg")no-repeat center;
+    /* background: url("../images/mi_03.jpg")no-repeat center; */
+}
+.main-logo a{
+    display: block;
+    width: 49px;
+    height: 48px;
+    margin: 0 auto;
 }
 .title h4{
     text-align: center;

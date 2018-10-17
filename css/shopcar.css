@@ -134,16 +134,16 @@
   height: 70px;
 }
 #carMain .carMain .carBox .carMain_hd .cartTop .list_chk .borser_origin {
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10x;
   border: 1px solid #e0e0e0;
   margin: 0 15px 0 24px;
   padding-left: 3px;
   cursor: pointer;
 }
 #carMain .carMain .carBox .carMain_hd .cartTop .list_chk .border_icon {
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
   border: 1px solid #f25807;
   margin: 0 15px 0 24px;
   background: #f25807;
@@ -203,8 +203,8 @@
   padding: 0 3px;
 }
 #carMain .carMain .carBox .cartBox .order_content .order_lists .list_chk .border_icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border: 1px solid #f25807;
   margin: 0 15px 0 24px;
   padding: 0 3px;

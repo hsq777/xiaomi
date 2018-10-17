@@ -385,9 +385,24 @@
 .star-top h2{width: 1154px;height: 40px;float: left;color: #333;font-size: 22px;line-height: 20px;text-align: left}
 .star-btn{width: 72px;height: 34px;float: left; padding-top: 6px;}
 /*左右按键*/
-.star-btn .btn-l{width: 34px;height: 24px;border: 1px solid #e0e0e0;float: left;}
-.star-btn .btn-r{width: 34px;height: 24px;border: 1px solid #e0e0e0;border-left: 0;float: right;}
-.star {width: 1226px;height: 380px;text-align: center;}
+.star-btn .btn-l{
+    width: 34px;
+    height: 24px;
+    border: 1px solid #e0e0e0;
+    float: left;
+}
+.star-btn .btn-r{
+    width: 34px;
+    height: 24px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    float: right;
+}
+.star {
+    width: 1226px;
+    height: 380px;
+    text-align: center;
+}
 .icon-xiangzuo{
     color: #e8e3e0
 }
@@ -727,14 +742,6 @@
 .show-prd .active a{
     color: #ff6700;
 }
-/*鼠标滑过设置class为active；离开不移除*/
-/* .machine-more li:hover{
-    padding-bottom: 4px;
-    border-bottom: 2px solid #ff6700;
-}
-.machine-more li a:hover{
-    color: #ff6700;
-} */
 /*鼠标滑过第二种样式*/
 .row-star-another li:hover{
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -771,6 +778,20 @@
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     transform:translateY(-5px);
     transition:all 0.3s ease;
+}
+.row-list-anther li a{
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: 0 auto;
+}
+.row-list-anther li img{
+    width: 150px;
+    height: 150px;
+}
+.row-list-anther .brick-item-s img{
+    width: 80px;
+    height: 80px;
 }
 /*智能*/
 .zhineng-more{
@@ -1434,9 +1455,10 @@
     top: 57px;
 }
 .bar-top .bar-shop{
-    left: -72px;
+    left: -90px;
     top: 90px;
 }
 .bar-top .shop-cir{
-    top: 97px;
+    top: 99px;
+    left: -5px;
 }
