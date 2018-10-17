@@ -3999,8 +3999,27 @@
         var	hours = document.querySelector('.hours');
         var	minutes = document.querySelector('.minutes');
         var seconds = document.querySelector('.seconds');
+        var $day = getNowFormatDate()+'  '+'22'+':'+'00'+':'+'00';
         // 日 时 分 秒的dom对象
-        countDownTime.init('2018/10/17 20:00:00',hours, minutes, seconds);
+        //获取当前时间，格式YYYY/MM/DD
+        function getNowFormatDate() {
+            var date = new Date();
+            var seperator1 = "/";
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            var currentdate = year + seperator1 + month + seperator1 + strDate;
+            return currentdate;
+        }
+
+        console.log($day);
+        countDownTime.init($day,hours, minutes, seconds);
     </script>
 </body>
 </html>
